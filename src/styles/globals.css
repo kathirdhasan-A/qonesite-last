@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+
+:root {
+  --primary-iris: #5D3FD3;
+  --bg-black: #000000;
+  --card-onyx: #121212;
+  --text-white: #FFFFFF;
+  --text-gray: #A0A0A0;
+}
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  scroll-behavior: smooth;
+}
+
+.back {
+  margin: 0;
+  background: 
+    radial-gradient(circle at 40% 70%, rgba(93, 63, 211, 0.15) 10%, transparent 100%),
+    radial-gradient(circle at 40% 80%, rgba(93, 63, 211, 0.1) 10%, transparent 100%),
+    #050505;
+    background-attachment: fixed;
+}
+
