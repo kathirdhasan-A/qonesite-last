@@ -41,20 +41,17 @@ export default function About() {
           <h2 className="text-3xl md:text-5xl font-bold text-white">
             About Us
           </h2>
-          <p className="text-lg  text-center md:text-start text-gray-300 leading-relaxed">
-            At <span className="font-semibold text-white">QuantrailData</span>, 
-            we empower teams to take complete control of their data — from storage 
-            to retrieval — with speed, clarity, and security. Our mission is to 
-            simplify database operations while ensuring enterprise‑grade compliance.
+          <p className="text-lg text-center md:text-start text-gray-300 leading-relaxed">
+            We watched as the  <span className="font-semibold text-white">AI Revolution</span>
+            turned into a data-harvesting race. We saw enterprise secrets, medical records, and legal ip being fed into public black boxes for the sake of a chat interface
           </p>
-          <p className="text-lg text-center md:text-start text-gray-400 leading-relaxed">
-            Trusted by developers worldwide, we combine robust backend architecture 
-            with intuitive interfaces, helping organizations unlock insights without 
-            compromising privacy or performance.
+          <p className="text-lg  w-full text-center md:text-start text-gray-300 leading-relaxed">We built a different path.</p>
+          <p className="text-lg text-center md:text-start text-gray-300 leading-relaxed">
+            The cloud isn't the problem - data leakage is . Out team builds for the organizations that need the power of AI but refuse the liability of third-party access.
           </p>
-          <button className="bg-gray-500 text-sm md:h-12 p-2 md:text-md md:px-4 md:py-2 hover:ring-2 rounded ring-[#A0A0A0]transition">
-            Learn More
-          </button>
+          <p className="text-lg text-center md:text-start text-gray-300 leading-relaxed">
+            We provide the intellligence layer that runs on your hardware of choice. We don't want your data. We enable you to securely own your data.
+          </p>
         </motion.div>
       </motion.div>
     </section>

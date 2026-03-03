@@ -23,34 +23,54 @@ const itemVariants: Variants = {
 
 const faqData = [
   {
-    question: "How does Quantrial ensure my data stays private?",
+    question: "Do you have access to our data?",
     answer:
-      "We deploy on-premise or in your own cloud environment, so your data never leaves your controlled network.",
+      "No. The software runs entirely on your servers. We do not host your data, we do not see your queries, and we have no access to your environment. Your intelligence layer is as isolated as your hardware.",
   },
   {
-    question: "Do I need coding skills to use Quantrail?",
+    question: "What hardware do I need for the pilot?",
     answer:
-      "While it's not a no-code tool, our natural language interface lets you ask questions and get insights without complex queries.",
+      "The software is optimized for dedicated Linux servers or private cloud instances with NVIDIA GPU support. We will provide a specific hardware compatibility list once your application is approved.",
   },
   {
-    question: "What deployment options are available?",
+    question: "Does my data leave my network?",
     answer:
-      "You can deploy full on-premise or bring your own cloud infrastructure to maintain compliance and privacy.",
+      "No. While your network remains connected to the internet, our software ensures that your proprietary data and queries are never sent to third-party AI providers. All processing stays within your perimeter.",
   },
   {
-    question: "How quickly can I start using the platform?",
+    question: "How is this different from a ChatGPT Enterprise account?",
     answer:
-      "Setup is streamlined to get you running with real-time analytics in a matter of minutes, not weeks.",
+      "ChatGPT Enterprise is a black box running on third-party servers. Our solution is a private engine running on your infrastructure. You maintain full custody of the logs, the access controls, and the privacy.",
   },
   {
-    question: "Is Quantrail secure and compliant with industry standards?",
+    question: "What happens after the 30-day free pilot?",
     answer:
-      "Yes, security is built into every layer, ensuring enterprise-grade compliance and data protection.",
+      "You can choose to off-board the software, extend the pilot for a deeper integration, or transition to a permanent enterprise license. Any data indexed during the pilot remains on your hardware.",
   },
   {
-    question: "Do I need to learn new tools to use Quantrail?",
+    question: "Is Unlimited Data really unlimited?",
     answer:
-      "The interface is intuitive and designed to fit seamlessly into analysts' existing workflows.",
+      "The software does not impose artificial caps. Your only limit is the storage and processing power of the hardware you provide.",
+  },
+  {
+    question: "Which AI models do you support?",
+    answer:
+      "The software does not impose artificial caps. Your only limit is the storage and processing power of the hardware you provide.",
+  },
+  {
+    question: "How long does the initial setup take?",
+    answer:
+      "The implementation process typically takes a few days. This is not a plug-and-play consumer app; it is an enterprise-grade deployment. We perform a rigorous environment audit and calibration to ensure the engine is perfectly optimized for your hardware. At a minimum, we require GPU-enabled VMs with SSH access to begin the configuration.",
+  },
+  {
+    question: "Can we integrate this with our existing tools?",
+    answer:
+      "Yes. Our software is designed to function as an intelligence layer on top of your current data stack. It indexes your existing document stores and databases where they sit, allowing you to query your internal knowledge base without migrating data or disrupting your current workflows.",
+  },
+  {
+    question: "Does this require a specialized DevOps team to maintain?",
+    answer:
+      "No. While the system is hosted on your infrastructure, we provide the engineering support to keep it running. You maintain the physical and network control; we provide the technical expertise to manage the software layer.",
   },
 ];
 
@@ -62,13 +82,13 @@ export default function Faq() {
   };
 
   return (
-    <div className="back" id="faqs">
+    <div className="back pb-10" id="faqs">
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col justify-evenly gap-4 pt-5 items-center md:h-screen"
+        className="flex flex-col justify-evenly gap-4  items-center md:h-screen"
       >
         <motion.div variants={itemVariants} className="flex justify-center">
           <h1 className="text-2xl w-[60%] sm:text-3xl md:text-5xl font-semibold text-white text-center">

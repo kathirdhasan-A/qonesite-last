@@ -1,8 +1,9 @@
 import YouTube, { YouTubeProps } from "react-youtube";
 import { IoCloudOutline } from "react-icons/io5";
-import { GoShieldLock } from "react-icons/go";
-import { MdExitToApp } from "react-icons/md";
-import { PiCreditCardLight } from "react-icons/pi";
+import { FaShieldAlt } from "react-icons/fa";
+import { IoIosRefresh } from "react-icons/io";
+import { IoIosDesktop } from "react-icons/io";
+import { IoLockClosedOutline } from "react-icons/io5";
 import { motion, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
@@ -35,7 +36,6 @@ export default function Visual() {
 
   return (
     <div className="md:h-screen pt-20 md:pt-0 back px-2 flex flex-col justify-center items-center" id="samples">
-      {/* <div className="bg-green-50 h-20 w-full"></div> */}
       <div className="h-55 w-[90%] md:h-[70%] md:w-[70%] p-2 border-3 rounded-lg border-[#5d3fd326] shadow-[0_14px_50px_#5d3fd326] flex justify-center items-center cursor-pointer">
         <YouTube videoId="ZjAqacIC_3c" className="w-full h-full " opts={opts} />
       </div>
@@ -47,20 +47,20 @@ export default function Visual() {
         className="hidden justify-evenly md:flex md:w-[60%] mt-5"
       >
         <motion.div variants={itemVariants} className="flex gap-3 items-center">
-          <PiCreditCardLight className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
-          <p>Secure Purchase</p>
+          <IoLockClosedOutline className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
+          <p>Zero Data outbound</p>
         </motion.div>
         <motion.div variants={itemVariants} className="flex gap-3 items-center">
-          <MdExitToApp className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
-          <p>Instant Access</p>
+          <IoIosDesktop className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
+          <p>Deploy anywhere</p>
         </motion.div>
         <motion.div variants={itemVariants} className="flex gap-3 items-center">
-          <GoShieldLock className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
-          <p>Quality</p>
+          <FaShieldAlt className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
+          <p>Full Audit Control</p>
         </motion.div>
         <motion.div variants={itemVariants} className="flex gap-3 items-center">
-          <IoCloudOutline className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
-          <p>Constant Updates</p>
+          <IoIosRefresh className="h-7 w-7 text-[#5D3FD3]  shadow-[#5D3FD3] " />
+          <p>Intelligence Updates</p>
         </motion.div>
       </motion.div>
     </div>

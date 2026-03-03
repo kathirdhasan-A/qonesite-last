@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
+import { GoGift } from "react-icons/go";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -70,8 +71,8 @@ export default function MainSection() {
 
         <div className="flex items-center gap-3">
           <button className="px-2 bg-[#5D3FD3] border border-transparent md:px-3 md:py-3 rounded block font-semibold hover:bg-iris/20 hover:border-iris">
-            <span className="hidden md:block">Get Instant Access</span>
-            <span className="md:hidden text-sm">Get</span>
+            <span className="hidden md:block">Apply for Pilot</span>
+            <span className="md:hidden text-sm">Apply</span>
           </button>
           <RxHamburgerMenu
             className="block md:hidden h-7 w-6 cursor-pointer"
@@ -129,7 +130,7 @@ export default function MainSection() {
             className="bg-[#5D3FD3] px-4 py-2 rounded font-semibold text-white "
             onClick={() => setMenuOpen(false)}
           >
-            Get Instant Access
+            Apply for Pilot
           </button>
         </div>
       </motion.div>
@@ -172,31 +173,30 @@ export default function MainSection() {
           className="w-[55%] font-semibold text-white text-2xl md:text-7xl text-center flex justify-center"
         >
           <p>
-            From storage to{" "}
+            Your Data.{" "}
             <strong className="font-semibold text-[#5D3FD3]">
-              retrieval — complete control over your database
+              Your AI. Your Rules.
             </strong>
           </p>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="h-12 md:tracking-wider flex text-center justify-center items-center"
+          className=" md:tracking-wider flex text-center py-4 my-3 justify-center w-[60%] items-center"
         >
-          <p className="text-[#A0A0A0]">
-            Simply database operation with speed and clarity
+          <p className="text-[#A0A0A0] ">
+            Stop trading your IP for productivity. High-performance AI that processes your data entirely on your hardware of choice - no leaks, no provider training, no compromises.
           </p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex gap-5">
           <button className="bg-[#5D3FD3] text-sm md:h-12 p-2 md:text-md md:px-4 md:py-2 rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
-            Get Instant Access
+            Apply for Pilot
           </button>
-          <button className="bg-gray-500 text-sm md:h-12 p-2 md:text-md md:px-4 md:py-2 hover:ring-2 rounded ring-[#A0A0A0]">
-            Learn More
-          </button>
+         
         </motion.div>
       </motion.div>
     </div>
   );
 }
+
