@@ -25,7 +25,7 @@ const itemVariants: Variants = {
 export default function Features() {
   return (
     <div
-      className="back transition duration-300   justify-evenly flex flex-col"
+      className="back transition duration-300  justify-evenly flex flex-col"
       id="features"
     >
       <motion.div
@@ -79,19 +79,13 @@ export default function Features() {
 
         <motion.div
           variants={itemVariants}
-<<<<<<< HEAD
-          className="flex flex-col gap-3 md:gap-5"
-        >
-          <div className="flex flex-col md:flex-row w-full justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
-=======
+
           className="flex flex-col justify-center items-center gap-3 md:gap-5 md:px-13"
         >
-          <div className="flex flex-col md:flex-row md:w-[70%] justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex flex-col justify-between w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+          <div className="flex flex-col md:flex-row  justify-center items-center gap-3">
+            <div className="bg-[#5D3FD3]  group flex flex-col justify-between w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
->>>>>>> ca1f02d (content updated)
+
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">Local Reasoning</h2>
               </div>
@@ -101,37 +95,24 @@ export default function Features() {
                 provider.
               </p>
             </div>
-<<<<<<< HEAD
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
 
-              <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-              <h2 className="md:font-bold md:text-2xl  ">Converse with Data</h2>
-=======
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">Private Indexing</h2>
->>>>>>> ca1f02d (content updated)
+
               </div>
               <p className="text-sm md:text-lg  text-gray-300">
                 Transform fragmented PDFs, docs, and database into a secure,
                 searchable map that lives behind your firewall.
               </p>
             </div>
-<<<<<<< HEAD
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-            <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
-              <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-              <h2 className="md:font-bold md:text-2xl  ">
-                Intelligence Unlocked
-              </h2>
-=======
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">Neural Search</h2>
->>>>>>> ca1f02d (content updated)
+
               </div>
               <p className="text-sm md:text-lg  text-gray-300">
                 Ask complex questions in plain English and get precise answers
@@ -139,15 +120,11 @@ export default function Features() {
               </p>
             </div>
           </div>
-<<<<<<< HEAD
-          <div className="flex flex-col md:flex-row w-full justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
-=======
-          <div className="flex flex-col md:flex-row md:w-[70%] justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+
+          <div className="flex flex-col md:flex-row  justify-center items-center gap-3">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
->>>>>>> ca1f02d (content updated)
+
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">
                   Comprehensive Auditting
@@ -159,20 +136,14 @@ export default function Features() {
                 oversight.
               </p>
             </div>
-<<<<<<< HEAD
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
 
-              <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-              <h2 className="md:font-bold md:text-2xl  ">Converse with Data</h2>
-=======
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">
                   Fine-Grained Access
                 </h2>
->>>>>>> ca1f02d (content updated)
+
               </div>
               <p className="text-sm md:text-lg  text-gray-300">
                 Control exactly who can <span>talk</span> to which dataset.
@@ -180,21 +151,14 @@ export default function Features() {
                 restricted to the right users.
               </p>
             </div>
-<<<<<<< HEAD
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-60 md:w-[19%] gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-            <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between pr-10">
-              <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-              <h2 className="md:font-bold md:text-2xl  ">
-                Intelligence Unlocked
-              </h2>
-=======
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-75  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
               <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
                 <h2 className="md:font-bold md:text-2xl font-semibold  ">
                   Provider-Agnostic Servers
                 </h2>
->>>>>>> ca1f02d (content updated)
+
               </div>
               <p className="text-sm md:text-lg  text-gray-300">
                 Deploy on any dedicated server environment, whether on-premise

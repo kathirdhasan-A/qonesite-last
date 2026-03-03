@@ -84,7 +84,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="back py-20 px-6 bg-black text-white">
+    <section id="contact" className="back bg-black text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"

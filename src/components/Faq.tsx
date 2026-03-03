@@ -88,7 +88,7 @@ export default function Faq() {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col justify-evenly gap-4  items-center md:h-screen"
+        className="flex flex-col justify-evenly gap-4  items-center "
       >
         <motion.div variants={itemVariants} className="flex justify-center">
           <h1 className="text-2xl w-[60%] sm:text-3xl md:text-5xl font-semibold text-white text-center">
