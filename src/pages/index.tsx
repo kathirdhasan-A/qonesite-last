@@ -19,12 +19,12 @@ export default function Home() {
     <motion.div  >
       <MainSection />
       <Visual />
-      <About/>
       <Solutions/>
       <Features />
       <Pricing/>
       <Faq/>
       <Contact/>
+      <About/>
       <Footer/>
       <Link href={"#home"} className="fixed bottom-10 right-10"><FaArrowUp/></Link>
     </motion.div>

@@ -44,9 +44,9 @@ export default function MainSection() {
         className="flex w-full h-15 items-center justify-between lg:justify-around"
       >
         <div className="flex items-center justify-center gap-2">
-          <img src="/logo.png" alt="qunt" className="lg:w-12 w-8" />
+          <img src="/appLogo.png" alt="qunt" className="lg:w-12 w-8 rounded " />
           <h1 className="font-bold text-[#5D3FD3] lg:text-2xl">
-            QuantrailData
+            Qone
           </h1>
         </div>
 
@@ -69,10 +69,10 @@ export default function MainSection() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <button className="px-2 bg-[#5D3FD3] border border-transparent lg:px-3 lg:py-3 rounded block font-semibold hover:bg-iris/20 hover:border-iris">
             <span className="hidden lg:block">Apply for Pilot</span>
-            <span className="lg:hidden text-sm">Apply</span>
+            <span className="lg:hidden text-sm p-2">Apply</span>
           </button>
           <RxHamburgerMenu
             className="block lg:hidden h-7 w-6 cursor-pointer"
@@ -140,7 +140,7 @@ export default function MainSection() {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="w-full flex flex-col items-center h-[80%] gap-7"
+        className="w-full flex flex-col items-center h-[80%] gap-7 "
       >
         <motion.div
           variants={itemVariants}
@@ -148,7 +148,7 @@ export default function MainSection() {
         >
           <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
             <div className="h-13 w-13 justify-center flex items-center">
-              <img src="/logo.png" alt="User 5" className="w-12 rounded" />
+              <img src="/appLogo.png" alt="User 5" className="w-12 rounded" />
             </div>
             <div className="text-center lg:text-left">
               <p className="text-sm lg:text-lg text-white font-semibold">

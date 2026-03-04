@@ -90,7 +90,7 @@ export default function Contact() {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-3xl mx-auto flex flex-col items-center text-center gap-6"
+        className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6"
       >
         <motion.h2 className="text-3xl md:text-5xl font-bold">
           Get in Touch
@@ -194,7 +194,7 @@ export default function Contact() {
               <input
                 type="radio"
                 name="GPU_enabled"
-                value="Yes"
+                value="The organization confirms the availability of GPU-enabled VMs with SSH access."
                 onChange={handleChange}
                 className="accent-iris"
               />
@@ -204,7 +204,7 @@ export default function Contact() {
               <input
                 type="radio"
                 name="zeroData_accepted"
-                value="Accepted"
+                value="It is confirmed that this deployment is strictly on-premise, ensuring zero data export."
                 onChange={handleChange}
                 className="accent-iris"
               />
@@ -229,26 +229,6 @@ export default function Contact() {
           </button>
         </motion.form>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col w-full md:flex-row gap-8 text-gray-400 md:text-lg mt-8 items-center justify-center border-t border-zinc-800 pt-8"
-        >
-          <div className="hover:text-iris transition-colors">
-            <strong>Email</strong> <br />
-            <span className="text-sm">support@quantraildata.com</span>
-          </div>
-          <div className="hover:text-iris transition-colors">
-            <strong>Phone</strong> <br />
-            <span className="text-sm">+91 98765 43210</span>
-          </div>
-          <Link 
-            href="https://www.google.com..." 
-            className="hover:text-iris transition-colors"
-          >
-            <strong>Address</strong> <br />
-            <span className="text-sm">Chennai, India</span>
-          </Link>
-        </motion.div>
       </motion.div>
     </section>
   );
