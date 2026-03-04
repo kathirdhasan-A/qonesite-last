@@ -9,6 +9,9 @@
   --text-white: #FFFFFF;
   --text-gray: #A0A0A0;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: #000000;

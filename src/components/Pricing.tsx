@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { RiArrowDropRightFill } from "react-icons/ri";
 
 export default function Packages() {
@@ -70,10 +71,12 @@ export default function Packages() {
             </div>
 
             <div className="flex justify-center pt-4">
-              <button className="bg-white text-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent cursor-pointer sm:py-3 rounded font-semibold flex items-center gap-2">
-                <span className="md:hidden">Apply</span>
-                <span className="hidden md:block">Apply for Pilot</span>
-              </button>
+              <Link href={"#contact"}>
+                <button className="bg-white text-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent cursor-pointer sm:py-3 rounded font-semibold flex items-center gap-2">
+                  <span className="md:hidden">Apply</span>
+                  <span className="hidden md:block">Apply for Pilot</span>
+                </button>
+              </Link>
             </div>
           </motion.div>
 
@@ -130,10 +133,12 @@ export default function Packages() {
             </div>
 
             <div className="flex justify-center pt-4">
-              <button className="bg-white text-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent cursor-pointer sm:py-3 rounded font-semibold flex items-center gap-2">
-                <span className="md:hidden">Apply</span>
-                <span className="hidden md:block">Apply for Pilot</span>
-              </button>
+              <Link href={"#contact"}>
+                <button className="bg-white text-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent cursor-pointer sm:py-3 rounded font-semibold flex items-center gap-2">
+                  <span className="md:hidden">Apply</span>
+                  <span className="hidden md:block">Apply for Pilot</span>
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>

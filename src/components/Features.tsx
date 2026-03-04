@@ -1,5 +1,6 @@
 import { Variants, motion } from "framer-motion";
 import { div } from "framer-motion/client";
+import Link from "next/link";
 import { BsCloudPlus } from "react-icons/bs";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
@@ -53,10 +54,12 @@ export default function Features() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 mt-6"
         >
+         <Link href={'#pricing'} >
           <button className="bg-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent hover:border-iris cursor-pointer hover:bg-iris/20 sm:py-3 rounded font-semibold text-white justify-center flex items-center gap-2">
             <span className="lg:hidden  ">Get</span>
             <span className="hidden lg:block ">Apply for Pilot</span>
           </button>
+         </Link>
         </motion.div>
       </motion.div>
 
