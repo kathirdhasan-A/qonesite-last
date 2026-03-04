@@ -104,7 +104,7 @@ export default function Contact() {
 
         <motion.form
           variants={itemVariants}
-          className="w-full flex flex-col gap-4 mt-4 text-left"
+          className="w-full flex flex-col gap-4 mt-4 text-left p-5"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col md:flex-row gap-4">

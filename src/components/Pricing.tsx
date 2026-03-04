@@ -16,10 +16,10 @@ export default function Packages() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6  justify-center py-10 ">
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center py-10 ">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-[#5D3FD3] rounded-2xl p-6 flex flex-col w-[82%] md:w-[30%] gap-4 text-white shadow-xl  transition-transform duration-300 justify-between items-center"
+            className="bg-[#5D3FD3] rounded-2xl p-6 flex flex-col w-[79%]  md:w-[30%] gap-4 text-white shadow-xl  transition-transform duration-300 justify-between items-center"
           >
             <div className=" rounded-2xl p-6 flex flex-col gap-4 text-white transition-transform duration-300">
               <h2 className="text-2xl font-bold">Standard Pilot</h2>

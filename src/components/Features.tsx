@@ -37,13 +37,13 @@ export default function Features() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white text-center"
+          className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white text-center"
         >
           Stop Exporting Your IP.
         </motion.h2>
         <motion.p
           variants={itemVariants}
-          className="text-sm sm:text-base md:text-lg text-gray-400 text-center max-w-xl"
+          className="text-sm sm:text-base lg:text-lg text-gray-400 text-center max-w-xl"
         >
           The Pilot Program is now open. Deploy the private intelligence layer
           that keeps your data inside your network and out of third-party
@@ -54,8 +54,8 @@ export default function Features() {
           className="flex flex-col sm:flex-row gap-4 mt-6"
         >
           <button className="bg-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent hover:border-iris cursor-pointer hover:bg-iris/20 sm:py-3 rounded font-semibold text-white justify-center flex items-center gap-2">
-            <span className="md:hidden  ">Get</span>
-            <span className="hidden md:block ">Apply for Pilot</span>
+            <span className="lg:hidden  ">Get</span>
+            <span className="hidden lg:block ">Apply for Pilot</span>
           </button>
         </motion.div>
       </motion.div>
@@ -65,10 +65,10 @@ export default function Features() {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="w-full flex flex-col py-10 gap-3"
+        className="w-full flex flex-col  py-10 gap-3"
       >
         <motion.div className="w-full flex flex-col justify-center items-center py-5">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white text-center">
             Product Features
           </h2>
           <p className="p-4 text-center  text-gray-400">
@@ -80,87 +80,87 @@ export default function Features() {
         <motion.div
           variants={itemVariants}
 
-          className="flex flex-col justify-center items-center gap-3 md:gap-5 md:px-13"
+          className="flex flex-col justify-center items-center gap-3 lg:gap-5 lg:px-13"
         >
-          <div className="flex flex-col md:flex-row  justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex flex-col justify-between w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+          <div className="flex flex-col lg:flex-row  justify-center items-center gap-3">
+            <div className="bg-[#5D3FD3]  group flex flex-col justify-between w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
 
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">Local Reasoning</h2>
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">Local Reasoning</h2>
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Run advanced reasoning models locally. Get high-tier
                 intelligence without sending a single byte to an external AI
                 provider.
               </p>
             </div>
 
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">Private Indexing</h2>
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">Private Indexing</h2>
 
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Transform fragmented PDFs, docs, and database into a secure,
                 searchable map that lives behind your firewall.
               </p>
             </div>
 
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">Neural Search</h2>
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">Neural Search</h2>
 
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Ask complex questions in plain English and get precise answers
                 cited directly from your internal records.
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row  justify-center items-center gap-3">
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+          <div className="flex flex-col lg:flex-row  justify-center items-center gap-3">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
 
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">
                   Comprehensive Auditting
                 </h2>
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Maintain a full forensic trail of every query and response.
                 Monitor how intelligence is used within your network for total
                 oversight.
               </p>
             </div>
 
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">
                   Fine-Grained Access
                 </h2>
 
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Control exactly who can <span>talk</span> to which dataset.
                 Manage granular permissions to ensure sentitive data stays
                 restricted to the right users.
               </p>
             </div>
 
-            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] md:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
-              <div className="flex items-center md:flex-col md:items-start md:gap-5 w-full justify-between ">
+            <div className="bg-[#5D3FD3]  group flex  flex-col justify-around w-[75%] lg:h-90  gap-5  p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102  hover:border hover:border-[#5D3FD3] transition duration-300">
+              <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between ">
                 <LuSquareArrowOutUpRight className="text-5xl border  group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                <h2 className="md:font-bold md:text-2xl font-semibold  ">
+                <h2 className="lg:font-bold lg:text-2xl font-semibold  ">
                   Provider-Agnostic Servers
                 </h2>
 
               </div>
-              <p className="text-sm md:text-lg  text-gray-300">
+              <p className="text-sm lg:text-lg  text-gray-300">
                 Deploy on any dedicated server environment, whether on-premise
                 or via your prefered private cloud provider. We provide the
                 intelligence layer; your choose where the hardware lives.

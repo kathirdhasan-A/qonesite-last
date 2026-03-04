@@ -34,23 +34,23 @@ export default function MainSection() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div id="home" className="flex back flex-col md:justify-around items-center bg-black md:h-full pt-5 px-2 md:pt-15">
+    <div id="home" className="flex back flex-col lg:justify-around items-center bg-black lg:h-full pt-5 px-2 lg:pt-15">
       {/* Navbar */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={navVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex w-full h-15 items-center justify-between md:justify-around"
+        className="flex w-full h-15 items-center justify-between lg:justify-around"
       >
         <div className="flex items-center justify-center gap-2">
-          <img src="/logo.png" alt="qunt" className="md:w-12 w-8" />
-          <h1 className="font-bold text-[#5D3FD3] md:text-2xl">
+          <img src="/logo.png" alt="qunt" className="lg:w-12 w-8" />
+          <h1 className="font-bold text-[#5D3FD3] lg:text-2xl">
             QuantrailData
           </h1>
         </div>
 
-        <div className="w-[45%] hidden md:flex justify-between text-lg transition text-[#A0A0A0]">
+        <div className="w-[45%] hidden lg:flex justify-between text-lg transition text-[#A0A0A0]">
           {[
             { label: "About Us", href: "#about" },
             { label: "Features", href: "#features" },
@@ -70,12 +70,12 @@ export default function MainSection() {
         </div>
 
         <div className="flex items-center gap-3">
-          <button className="px-2 bg-[#5D3FD3] border border-transparent md:px-3 md:py-3 rounded block font-semibold hover:bg-iris/20 hover:border-iris">
-            <span className="hidden md:block">Apply for Pilot</span>
-            <span className="md:hidden text-sm">Apply</span>
+          <button className="px-2 bg-[#5D3FD3] border border-transparent lg:px-3 lg:py-3 rounded block font-semibold hover:bg-iris/20 hover:border-iris">
+            <span className="hidden lg:block">Apply for Pilot</span>
+            <span className="lg:hidden text-sm">Apply</span>
           </button>
           <RxHamburgerMenu
-            className="block md:hidden h-7 w-6 cursor-pointer"
+            className="block lg:hidden h-7 w-6 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           />
         </div>
@@ -83,7 +83,7 @@ export default function MainSection() {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
@@ -92,7 +92,7 @@ export default function MainSection() {
         initial={{ x: "100%" }}
         animate={menuOpen ? { x: 0 } : { x: "100%" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="fixed top-0 back right-0 w-[70%] h-full text-[#A0A0A0] shadow-lg z-50 md:hidden flex flex-col"
+        className="fixed top-0 back right-0 w-[70%] h-full text-[#A0A0A0] shadow-lg z-50 lg:hidden flex flex-col"
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-700">
           <h2 className="text-white font-bold">Menu</h2>
@@ -146,16 +146,16 @@ export default function MainSection() {
           variants={itemVariants}
           className=" w-[55%] text-[#A0A0A0] py-12"
         >
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
             <div className="h-13 w-13 justify-center flex items-center">
               <img src="/logo.png" alt="User 5" className="w-12 rounded" />
             </div>
-            <div className="text-center md:text-left">
-              <p className="text-sm md:text-lg text-white font-semibold">
+            <div className="text-center lg:text-left">
+              <p className="text-sm lg:text-lg text-white font-semibold">
                 Trusted by <span className="text-[#5D3FD3]">Developers</span>{" "}
                 team worldwide
               </p>
-              <div className="flex items-center justify-center md:justify-start mt-2">
+              <div className="flex items-center justify-center lg:justify-start mt-2">
                 <span className="text-teal font-bold hover:text-white mr-2">
                   Excellent
                 </span>
@@ -170,7 +170,7 @@ export default function MainSection() {
 
         <motion.div
           variants={itemVariants}
-          className="w-[55%] font-semibold text-white text-2xl md:text-7xl text-center flex justify-center"
+          className="w-[55%] font-semibold text-white text-2xl lg:text-7xl text-center flex justify-center"
         >
           <p>
             Your Data.{" "}
@@ -182,7 +182,7 @@ export default function MainSection() {
 
         <motion.div
           variants={itemVariants}
-          className=" md:tracking-wider flex text-center py-4 my-3 justify-center w-[60%] items-center"
+          className=" lg:tracking-wider flex text-center py-4 my-3 justify-center w-[60%] items-center"
         >
           <p className="text-[#A0A0A0] ">
             Stop trading your IP for productivity. High-performance AI that processes your data entirely on your hardware of choice - no leaks, no provider training, no compromises.
@@ -190,7 +190,7 @@ export default function MainSection() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex gap-5">
-          <button className="bg-[#5D3FD3] text-sm md:h-12 p-2 md:text-md md:px-4 md:py-2 rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
+          <button className="bg-[#5D3FD3] text-sm lg:h-12 p-2 lg:text-lg lg:px-4 lg:py-2 rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
             Apply for Pilot
           </button>
          
