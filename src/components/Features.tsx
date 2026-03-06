@@ -1,8 +1,11 @@
 import { Variants, motion } from "framer-motion";
-import { div } from "framer-motion/client";
 import Link from "next/link";
-import { BsCloudPlus } from "react-icons/bs";
-import { LuSquareArrowOutUpRight } from "react-icons/lu";
+import { FaDatabase } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import { IoMdSearch } from "react-icons/io";
+import { PiClipboardTextBold } from "react-icons/pi";
+import { HiOutlineKey } from "react-icons/hi";
+import { FaServer } from "react-icons/fa";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -88,47 +91,109 @@ export default function Features() {
             {[
               {
                 title: "Local Reasoning",
+                icon:FaDatabase,
                 desc: "Run advanced reasoning models locally. Get high-tier intelligence without sending a single byte to an external AI provider.",
               },
               {
                 title: "Private Indexing",
+                icon:FaLock,
                 desc: "Transform fragmented PDFs, docs, and database into a secure, searchable map that lives behind your firewall.",
               },
               {
                 title: "Neural Search",
+                icon:IoMdSearch,
                 desc: "Ask complex questions in plain English and get precise answers cited directly from your internal records.",
               },
               {
                 title: "Comprehensive Auditing",
+                icon:PiClipboardTextBold,
                 desc: "Maintain a full forensic trail of every query and response. Monitor how intelligence is used within your network for total oversight.",
               },
               {
                 title: "Fine-Grained Access",
+                icon:HiOutlineKey,
                 desc: "Control exactly who can talk to which dataset. Manage granular permissions to ensure sensitive data stays restricted to the right users.",
               },
               {
                 title: "Provider-Agnostic Servers",
+                icon:FaServer,
                 desc: "Deploy on any dedicated server environment, whether on-premise or via your preferred private cloud provider.",
               },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-90 gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
-              >
-                <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between">
-                  <LuSquareArrowOutUpRight className="text-5xl border group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-                  <h2 className="lg:font-bold lg:text-2xl font-semibold">
-                    {feature.title}
-                  </h2>
-                </div>
-                <p className="text-sm lg:text-lg text-gray-300">
-                  {feature.desc}
-                </p>
-              </div>
-            ))}
+            ].map((feature, index) => {
+        const Icon = feature.icon || FaDatabase; 
+
+        return (
+          <div
+            key={index}
+            className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-90 gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
+          >
+            <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between">
+          
+              <Icon className="text-5xl border group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
+              
+              <h2 className="lg:font-bold lg:text-2xl font-semibold">
+                {feature.title}
+              </h2>
+            </div>
+            <p className="text-sm lg:text-lg text-gray-300">
+              {feature.desc}
+            </p>
           </div>
+        );
+      })}
+    </div>
         </motion.div>
       </motion.div>
     </div>
   );
 }
+
+
+// // ... keep your imports and variants as they are
+
+// export default function Features() {
+//   return (
+//     // ... outer containers
+//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-3">
+//       {[
+//         {
+//           title: "Local Reasoning",
+//           icon: FaDatabase, // Remove the quotes! Pass the component itself.
+//           desc: "Run advanced reasoning models locally...",
+//         },
+//         {
+//           title: "Private Indexing",
+//           icon: FaDatabase,
+//           desc: "Transform fragmented PDFs, docs, and database...",
+//         },
+//         // ... add icons to the rest of your objects
+//       ].map((feature, index) => {
+//         // 1. Assign the icon to a Capitalized variable
+//         const Icon = feature.icon || FaDatabase; 
+
+//         return (
+//           <div
+//             key={index}
+//             className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-90 gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
+//           >
+//             <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between">
+//               {/* 2. Use the Capitalized variable here */}
+//               <Icon className="text-5xl border group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
+              
+//               <h2 className="lg:font-bold lg:text-2xl font-semibold">
+//                 {feature.title}
+//               </h2>
+//             </div>
+//             <p className="text-sm lg:text-lg text-gray-300">
+//               {feature.desc}
+//             </p>
+//           </div>
+//         );
+//       })}
+//     </div>
+//     // ...
+//   );
+// }
+
+
+

@@ -71,7 +71,7 @@ export default function MainSection() {
 
         <div className="flex items-center gap-5">
           <Link href={'#pricing'}>
-          <button className="px-2 bg-[#5D3FD3] border border-transparent lg:px-3 lg:py-3 rounded block font-semibold hover:bg-iris/20 hover:border-iris">
+          <button className="px-2 bg-[#5D3FD3] border border-transparent lg:px-3 lg:py-3 rounded cursor-pointer block font-semibold hover:bg-iris/20 hover:border-iris">
             <span className="hidden lg:block">Apply for Pilot</span>
             <span className="lg:hidden text-sm p-2">Apply</span>
           </button></Link>
@@ -129,7 +129,7 @@ export default function MainSection() {
         <div className="flex justify-center mt-auto mb-6">
           <Link href={'#pricing'}>
           <button
-            className="bg-[#5D3FD3] px-4 py-2 rounded font-semibold text-white "
+            className="bg-[#5D3FD3] px-4 py-2 rounded font-semibold cursor-pointer text-white "
             onClick={() => setMenuOpen(false)}
           >
             Apply for Pilot
@@ -193,7 +193,7 @@ export default function MainSection() {
 
         <motion.div variants={itemVariants} className="flex gap-5">
           <Link href={'#pricing'}>
-          <button className="bg-[#5D3FD3] text-sm lg:h-12 p-2 lg:text-lg lg:px-4 lg:py-2 rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
+          <button className="bg-[#5D3FD3] text-sm lg:h-12 p-2 lg:text-lg lg:px-4 lg:py-2 cursor-pointer rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
             Apply for Pilot
           </button>
           </Link>

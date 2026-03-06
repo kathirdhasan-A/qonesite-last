@@ -42,10 +42,10 @@ export default function About() {
             About Us
           </h2>
           <p className="text-lg text-center md:text-start text-gray-300 leading-relaxed">
-            We watched as the  <span className="font-semibold text-white">AI Revolution</span>
+            We watched as the  <span className="font-semibold text-white">AI Revolution </span>
             turned into a data-harvesting race. We saw enterprise secrets, medical records, and legal ip being fed into public black boxes for the sake of a chat interface
           </p>
-          <p className="text-lg  w-full text-center md:text-start text-gray-300 leading-relaxed">We built a different path.</p>
+          <p className="text-lg  w-full text-center md:text-start text-gray-300 leading-relaxed"><span className="font-semibold text-white">We built a different path.</span></p>
           <p className="text-lg text-center md:text-start text-gray-300 leading-relaxed">
             The cloud isn't the problem - data leakage is . Out team builds for the organizations that need the power of AI but refuse the liability of third-party access.
           </p>
@@ -56,4 +56,4 @@ export default function About() {
       </motion.div>
     </section>
   );
-}
+}1

@@ -35,7 +35,9 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -84,7 +86,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="back bg-black text-white">
+    <section id="contact" className="back text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -96,16 +98,20 @@ export default function Contact() {
           Get in Touch
         </motion.h2>
 
-        <motion.p variants={itemVariants} className="text-lg text-gray-300 leading-relaxed">
-          Have questions about our platform or want to learn more?
-          We’d love to hear from you. Reach out to our team and we’ll
-          respond as quickly as possible.
+        <motion.p
+          variants={itemVariants}
+          className="text-lg text-gray-300 leading-relaxed"
+        >
+          Have questions about our platform or want to learn more? We’d love to
+          hear from you. Reach out to our team and we’ll respond as quickly as
+          possible.
         </motion.p>
 
         <motion.form
           variants={itemVariants}
-          className="w-full flex flex-col gap-4 mt-4 text-left p-5"
+          className="w-full flex flex-col gap-4 mt-4  text-left p-5"
           onSubmit={handleSubmit}
+          onMouseLeave={() => setDropdown(false)}
         >
           <div className="flex flex-col md:flex-row gap-4">
             <input
@@ -127,7 +133,7 @@ export default function Contact() {
               required
             />
           </div>
-          
+
           <input
             type="text"
             name="companyName"
@@ -141,7 +147,10 @@ export default function Contact() {
             <p className="font-bold pb-4">Organization Strength</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {["1-50", "51-200", "201-1000", "1000+"].map((range) => (
-                <label key={range} className="flex border rounded-lg border-zinc-600 p-2 font-semibold gap-3 cursor-pointer hover:bg-zinc-800">
+                <label
+                  key={range}
+                  className="flex border rounded-lg border-zinc-600 p-2 font-semibold gap-3 cursor-pointer hover:bg-zinc-800"
+                >
                   <input
                     type="radio"
                     name="strenght"
@@ -163,11 +172,17 @@ export default function Contact() {
               onClick={() => setDropdown(!dropdown)}
             >
               {formData.infraType || "Select Type"}
-              <IoIosArrowDown className={`transition-transform ${dropdown ? 'rotate-180' : ''}`} />
+              <IoIosArrowDown
+                className={`transition-transform ${dropdown ? "rotate-180" : ""}`}
+              />
             </div>
             {dropdown && (
-              <div className="absolute z-10 w-full mt-2 bg-zinc-900 border border-iris rounded-lg shadow-xl overflow-hidden">
-                {["On-Premise Rack", "Private Cloud (VPC)", "Dedicated Bare Metal"].map((type) => (
+              <div className="absolute w-full mt-2 bg-zinc-900 border border-iris rounded-lg shadow-xl overflow-hidden">
+                {[
+                  "On-Premise Rack",
+                  "Private Cloud (VPC)",
+                  "Dedicated Bare Metal",
+                ].map((type) => (
                   <p
                     key={type}
                     className="p-4 hover:bg-iris hover:text-white cursor-pointer transition-colors"
@@ -208,7 +223,8 @@ export default function Contact() {
                 onChange={handleChange}
                 className="accent-iris"
               />
-              I understand this deployment is strictly on-premise with zero data export.
+              I understand this deployment is strictly on-premise with zero data
+              export.
             </label>
           </div>
 
@@ -228,7 +244,6 @@ export default function Contact() {
             )}
           </button>
         </motion.form>
-
       </motion.div>
     </section>
   );
