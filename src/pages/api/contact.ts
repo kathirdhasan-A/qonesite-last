@@ -36,7 +36,7 @@ export default async function handler(
 
     await transporter.sendMail({
       from: email,
-      to: "contact@quantrail-data.com",
+      to: "qone@quantrail-data.com",
       subject: `New Contact Form Message from ${name}`,
       html: `
     <div style="background-color:#000000; color:#ffffff; font-family:Arial, sans-serif; padding:20px; border-radius:8px;">
@@ -58,7 +58,7 @@ export default async function handler(
   `,
     });
     await transporter.sendMail({
-      from: "contact@quantrail-data.com",
+      from: "qone@quantrail-data.com",
       to: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
