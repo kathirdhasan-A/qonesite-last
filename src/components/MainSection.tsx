@@ -22,6 +22,15 @@ const itemVariants: Variants = {
   },
 };
 
+const itemVariantsXaxis: Variants = {
+  hidden: { opacity: 0, x: 0 },
+  visible: {
+    opacity: 0.2,
+    x: 50,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const navVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -34,7 +43,10 @@ export default function MainSection() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div id="home" className="flex back flex-col lg:justify-around items-center bg-black lg:h-full pt-5 px-2 lg:pt-15">
+    <div
+      id="home"
+      className="flex back flex-col lg:justify-around items-center bg-black lg:h-full pt-5 px-2 lg:pt-15"
+    >
       {/* Navbar */}
       <motion.div
         initial="hidden"
@@ -45,9 +57,7 @@ export default function MainSection() {
       >
         <div className="flex items-center justify-center gap-2">
           <img src="/appLogo.png" alt="qunt" className="lg:w-12 w-8 rounded " />
-          <h1 className="font-bold text-[#5D3FD3] lg:text-2xl">
-            Qone
-          </h1>
+          <h1 className="font-bold text-[#5D3FD3] lg:text-2xl">Qone</h1>
         </div>
 
         <div className="w-[45%] hidden lg:flex justify-between text-lg transition text-[#A0A0A0]">
@@ -70,11 +80,12 @@ export default function MainSection() {
         </div>
 
         <div className="flex items-center gap-5">
-          <Link href={'#pricing'}>
-          <button className="px-2 bg-[#5D3FD3] border border-transparent lg:px-3 lg:py-3 rounded cursor-pointer block font-semibold hover:bg-iris/20 hover:border-iris">
-            <span className="hidden lg:block">Apply for Pilot</span>
-            <span className="lg:hidden text-sm p-2">Apply</span>
-          </button></Link>
+          <Link href={"#pricing"}>
+            <button className="px-3 bg-[#5D3FD3] border border-transparent  lg:px-3 lg:py-3 rounded cursor-pointer block font-semibold hover:bg-iris/20 hover:border-iris">
+              <span className="hidden lg:block">Apply for Pilot</span>
+              <span className="lg:hidden text-sm ">Apply</span>
+            </button>
+          </Link>
           <RxHamburgerMenu
             className="block lg:hidden h-7 w-6 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -107,7 +118,7 @@ export default function MainSection() {
 
         <ul className="flex flex-col items-center gap-6 py-6">
           {[
-           { label: "About Us", href: "#about" },
+            { label: "About Us", href: "#about" },
             { label: "Features", href: "#features" },
             { label: "Solutions", href: "#solutions" },
             { label: "Pricing", href: "#pricing" },
@@ -127,80 +138,97 @@ export default function MainSection() {
         </ul>
 
         <div className="flex justify-center mt-auto mb-6">
-          <Link href={'#pricing'}>
-          <button
-            className="bg-[#5D3FD3] px-4 py-2 rounded font-semibold cursor-pointer text-white "
-            onClick={() => setMenuOpen(false)}
-          >
-            Apply for Pilot
-          </button></Link>
+          <Link href={"#pricing"}>
+            <button
+              className="bg-[#5D3FD3] px-4 py-2 rounded font-semibold cursor-pointer text-white "
+              onClick={() => setMenuOpen(false)}
+            >
+              Apply for Pilot
+            </button>
+          </Link>
         </div>
       </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true, amount: 0.2 }}
-        className="w-full flex flex-col items-center h-[80%] gap-7 "
-      >
+      <div className="lg:flex lg:justify-between pt-10 lg:pt-20 lg:pl-20 ">
         <motion.div
-          variants={itemVariants}
-          className=" w-[55%] text-[#A0A0A0] py-12"
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          viewport={{ once: true, amount: 0.2 }}
+          className="w-[75%] lg:flex justify-start items-center hidden pl-30"
         >
-          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
-            <div className="h-13 w-13 justify-center flex items-center">
-              <img src="/appLogo.png" alt="User 5" className="w-12 rounded" />
-            </div>
-            <div className="text-center lg:text-left">
-              <p className="text-sm lg:text-lg text-white font-semibold">
-                Trusted by <span className="text-[#5D3FD3]">Developers</span>{" "}
-                team worldwide
-              </p>
-              <div className="flex items-center justify-center lg:justify-start mt-2">
-                <span className="text-teal font-bold hover:text-white mr-2">
-                  Excellent
-                </span>
-                <div className="flex text-teal-600 hover:text-teal-300">
-                  ★★★★★
+          <motion.img
+            src="webani.png"
+            alt="Animated"
+            className=" opacity-5 w-[70%]"
+            variants={itemVariantsXaxis}
+          />
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          viewport={{ once: true, amount: 0.2 }}
+          className="w-full flex flex-col justify-center lg:items-start items-center text-center lg:text-left lg:gap-7 "
+        >
+          {/* <motion.div
+            variants={itemVariants}
+            className=" w-[55%] text-[#A0A0A0] py-12"
+          >
+            <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
+              <div className="h-13 w-13 justify-center flex items-center">
+                <img src="/appLogo.png" alt="User 5" className="w-12 rounded" />
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-sm lg:text-lg text-white font-semibold">
+                  Trusted by <span className="text-[#5D3FD3]">Developers</span>{" "}
+                  team worldwide
+                </p>
+                <div className="flex items-center justify-center lg:justify-start mt-2">
+                  <span className="text-teal font-bold hover:text-white mr-2">
+                    Excellent
+                  </span>
+                  <div className="flex text-teal-600 hover:text-teal-300">
+                    ★★★★★
+                  </div>
+                  <span className="ml-2 hover:text-white">4.8/5</span>
                 </div>
-                <span className="ml-2 hover:text-white">4.8/5</span>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div> */}
 
-        <motion.div
-          variants={itemVariants}
-          className="w-[55%] font-semibold text-white text-2xl lg:text-7xl text-center flex justify-center"
-        >
-          <p>
-            Your Data.{" "}
-            <strong className="font-semibold text-[#5D3FD3]">
-              Your AI. Your Rules.
-            </strong>
-          </p>
-        </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="w-[55%] font-semibold text-white text-2xl lg:text-7xl flex justify-center"
+          >
+            <p>
+              Your Data.{" "}
+              <strong className="font-semibold text-[#5D3FD3]">
+                Your AI. Your Rules.
+              </strong>
+            </p>
+          </motion.div>
 
-        <motion.div
-          variants={itemVariants}
-          className=" lg:tracking-wider flex text-center py-4 my-3 justify-center w-[60%] items-center"
-        >
-          <p className="text-[#A0A0A0] ">
-            Stop trading your IP for productivity. High-performance AI that processes your data entirely on your hardware of choice - no leaks, no provider training, no compromises.
-          </p>
-        </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className=" lg:tracking-wider flex text- py-4 my-3 justify-center md:w-[60%] px-4 md:px-0 items-center"
+          >
+            <p className="text-[#A0A0A0]">
+              Stop trading your IP for productivity. High-performance AI that
+              processes your data entirely on your hardware of choice - no
+              leaks, no provider training, no compromises.
+            </p>
+          </motion.div>
 
-        <motion.div variants={itemVariants} className="flex gap-5">
-          <Link href={'#pricing'}>
-          <button className="bg-[#5D3FD3] text-sm lg:h-12 p-2 lg:text-lg lg:px-4 lg:py-2 cursor-pointer rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
-            Apply for Pilot
-          </button>
-          </Link>
-         
+          <motion.div variants={itemVariants} className="flex gap-5 lg:w-[60%] pt-5 lg:pt-0 ">
+            <Link href={"#pricing"}>
+              <button className="bg-[#5D3FD3] text-sm lg:h-12 p-2 lg:text-lg lg:px-4 lg:py-2 cursor-pointer rounded font-semibold border border-transparent hover:bg-iris/20 hover:border-iris">
+                Apply for Pilot
+              </button>
+            </Link>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }
-

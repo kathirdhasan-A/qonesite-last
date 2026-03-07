@@ -6,8 +6,8 @@ export default function Packages() {
   return (
     <div className="back " id="pricing">
       <motion.div className=" flex flex-col items-center justify-center gap-10 pb-10">
-        <div className="text-center max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center px-4 max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Select Your Pilot Phase
           </h1>
           <p className="text-lg text-gray-200">

@@ -94,13 +94,13 @@ export default function Contact() {
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6"
       >
-        <motion.h2 className="text-3xl md:text-5xl font-bold">
+        <motion.h2 className="text-3xl  md:text-5xl font-bold">
           Get in Touch
         </motion.h2>
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-300 leading-relaxed"
+          className="text-lg text-gray-300 px-4 md:px-0 leading-relaxed"
         >
           Have questions about our platform or want to learn more? We’d love to
           hear from you. Reach out to our team and we’ll respond as quickly as
@@ -120,7 +120,7 @@ export default function Contact() {
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
+              className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
               required
             />
             <input
@@ -129,7 +129,7 @@ export default function Contact() {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
+              className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
               required
             />
           </div>
@@ -140,16 +140,16 @@ export default function Contact() {
             placeholder="Company Name"
             value={formData.companyName}
             onChange={handleChange}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
+            className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
           />
 
-          <div className="flex flex-col bg-zinc-900 rounded-lg border border-zinc-800 p-4">
+          <div className="flex flex-col bg-transparent rounded-lg border border-iris/50 p-4">
             <p className="font-bold pb-4">Organization Strength</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {["1-50", "51-200", "201-1000", "1000+"].map((range) => (
                 <label
                   key={range}
-                  className="flex border rounded-lg border-zinc-600 p-2 font-semibold gap-3 cursor-pointer hover:bg-zinc-800"
+                  className="flex items-center border rounded-lg border-iris/50 p-2 font-semibold gap-3 cursor-pointer hover:border-iris "
                 >
                   <input
                     type="radio"
@@ -157,7 +157,7 @@ export default function Contact() {
                     value={range}
                     checked={formData.strenght === range}
                     onChange={handleChange}
-                    className="accent-iris cursor-pointer"
+                    className="peer appearance-none h-4 w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris"
                   />
                   {range}
                 </label>
@@ -168,7 +168,7 @@ export default function Contact() {
           <div className="relative">
             <p className="font-bold pb-2">Infrastructure Type</p>
             <div
-              className="flex justify-between items-center cursor-pointer border border-zinc-600 rounded p-4 bg-zinc-900"
+              className="flex justify-between items-center cursor-pointer border border-iris/50 rounded p-4 bg-transparent"
               onClick={() => setDropdown(!dropdown)}
             >
               {formData.infraType || "Select Type"}
@@ -177,7 +177,7 @@ export default function Contact() {
               />
             </div>
             {dropdown && (
-              <div className="absolute w-full mt-2 bg-zinc-900 border border-iris rounded-lg shadow-xl overflow-hidden">
+              <div className="absolute w-full mt-2 bg-[#120d28] border border-iris rounded-lg shadow-xl overflow-hidden">
                 {[
                   "On-Premise Rack",
                   "Private Cloud (VPC)",
@@ -185,7 +185,7 @@ export default function Contact() {
                 ].map((type) => (
                   <p
                     key={type}
-                    className="p-4 hover:bg-iris hover:text-white cursor-pointer transition-colors"
+                    className="p-4 hover:bg-iris hover:bg-opacity-20  hover:text-white cursor-pointer transition-colors"
                     onClick={() => handleDropdownSelect(type)}
                   >
                     {type}
@@ -201,27 +201,27 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
+            className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
           />
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm flex gap-3 cursor-pointer">
+            <label className="text-sm flex items-center gap-3 cursor-pointer">
               <input
                 type="radio"
                 name="GPU_enabled"
                 value="The organization confirms the availability of GPU-enabled VMs with SSH access."
                 onChange={handleChange}
-                className="accent-iris"
+                className="peer appearance-none h-3 w-3 md:h-4 md:w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris"
               />
               I confirm our Organization can provide GPU-enabled VMs with SSH
             </label>
-            <label className="text-sm flex gap-3 cursor-pointer">
+            <label className="text-sm flex items-center gap-3 cursor-pointer">
               <input
                 type="radio"
                 name="zeroData_accepted"
                 value="It is confirmed that this deployment is strictly on-premise, ensuring zero data export."
                 onChange={handleChange}
-                className="accent-iris"
+                className="peer appearance-none h-3 md:h-4 w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris "
               />
               I understand this deployment is strictly on-premise with zero data
               export.

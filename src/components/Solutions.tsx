@@ -19,7 +19,7 @@ const itemVariants: Variants = {
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="back md:py-20 px-6 md:px-12 bg-black text-white">
+    <section id="solutions" className="back pt-10 md:py-20 px-6 md:px-12 bg-black text-white">
       <motion.div 
               initial="hidden"
         whileInView="visible"

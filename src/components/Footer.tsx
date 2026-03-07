@@ -39,7 +39,7 @@ export default function Footer() {
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <img src="/logo.png" alt="logo" className="w-10" />
-                            <h1 className="text-xl font-bold text-[#5D3FD3]">QuantrailData</h1>
+                            <h1 className="text-xl font-bold text-[#5D3FD3]">Quantrail Data</h1>
                         </div>
                         <p className="text-sm text-center">
                             Simplifying database operations with speed, clarity, and secure access.
@@ -81,7 +81,7 @@ export default function Footer() {
                     className="mt-10 border-t border-gray-700 pt-6 text-center text-sm"
                     variants={itemVariants}
                 >
-                    © {new Date().getFullYear()} QuantrailData. All rights reserved.
+                    © {new Date().getFullYear()} Quantrail Data. All rights reserved.
                 </motion.div>
             </motion.footer>
         </div>
