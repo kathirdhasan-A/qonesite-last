@@ -58,8 +58,8 @@ export default function Features() {
           className="flex flex-col sm:flex-row gap-4 mt-6"
         >
          <Link href={'#pricing'} >
-          <button className="bg-[#5D3FD3] px-4 py-2 sm:px-6 border border-transparent hover:border-iris cursor-pointer hover:bg-iris/20 sm:py-3 rounded font-semibold text-white justify-center flex items-center gap-2">
-            <span className="lg:hidden  ">Get</span>
+          <button className="bg-[#5D3FD3] px-4 py-2 scale-[0.96] hover:scale-[0.99]  sm:px-6 border border-transparent hover:border-iris cursor-pointer hover:bg-iris/20 sm:py-3 rounded font-semibold text-white justify-center flex items-center gap-2">
+            <span className="lg:hidden  ">Apply</span>
             <span className="hidden lg:block ">Apply for Pilot</span>
           </button>
          </Link>
@@ -147,53 +147,6 @@ export default function Features() {
     </div>
   );
 }
-
-
-// // ... keep your imports and variants as they are
-
-// export default function Features() {
-//   return (
-//     // ... outer containers
-//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-3">
-//       {[
-//         {
-//           title: "Local Reasoning",
-//           icon: FaDatabase, // Remove the quotes! Pass the component itself.
-//           desc: "Run advanced reasoning models locally...",
-//         },
-//         {
-//           title: "Private Indexing",
-//           icon: FaDatabase,
-//           desc: "Transform fragmented PDFs, docs, and database...",
-//         },
-//         // ... add icons to the rest of your objects
-//       ].map((feature, index) => {
-//         // 1. Assign the icon to a Capitalized variable
-//         const Icon = feature.icon || FaDatabase; 
-
-//         return (
-//           <div
-//             key={index}
-//             className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-90 gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
-//           >
-//             <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between">
-//               {/* 2. Use the Capitalized variable here */}
-//               <Icon className="text-5xl border group-hover:bg-[#5D3FD3] group-hover:border-[#5D3FD3] transition duration-300 p-3 rounded-full" />
-              
-//               <h2 className="lg:font-bold lg:text-2xl font-semibold">
-//                 {feature.title}
-//               </h2>
-//             </div>
-//             <p className="text-sm lg:text-lg text-gray-300">
-//               {feature.desc}
-//             </p>
-//           </div>
-//         );
-//       })}
-//     </div>
-//     // ...
-//   );
-// }
 
 
 

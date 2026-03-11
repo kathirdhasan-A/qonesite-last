@@ -22,16 +22,17 @@ const itemVariants: Variants = {
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdown1, setDropdown1] = useState(false);
+  const [dropdown2, setDropdown2] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     companyName: "",
-    strenght: "",
-    infraType: "",
-    GPU_enabled: "",
-    zeroData_accepted: "",
+    Deployment: "",
+    Primary_Cloud_Provider: "",
+    GPU_Availability: "",
+    use_case: "",
     message: "",
   });
 
@@ -43,11 +44,17 @@ export default function Contact() {
       ...prevData,
       [name]: value,
     }));
+    console.log(formData);
   };
 
-  const handleDropdownSelect = (type: string) => {
-    setFormData((prev) => ({ ...prev, infraType: type }));
-    setDropdown(false);
+  const handleDropdown1Select = (type: string) => {
+    setFormData((prev) => ({ ...prev, Primary_Cloud_Provider: type }));
+    setDropdown1(false);
+  };
+
+  const handleDropdown2Select = (type: string) => {
+    setFormData((prev) => ({ ...prev, GPU_Availability: type }));
+    setDropdown2(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,10 +76,10 @@ export default function Contact() {
           email: "",
           message: "",
           companyName: "",
-          strenght: "",
-          infraType: "",
-          GPU_enabled: "",
-          zeroData_accepted: "",
+          Deployment: "",
+          Primary_Cloud_Provider: "",
+          GPU_Availability: "",
+          use_case: "",
         });
       } else {
         alert(result.error || "Failed to send message");
@@ -92,7 +99,7 @@ export default function Contact() {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6"
+        className="max-w-5xl mx-auto flex flex-col pt-10 lg:pt-15  items-center text-center gap-6"
       >
         <motion.h2 className="text-3xl  md:text-5xl font-bold">
           Get in Touch
@@ -111,7 +118,7 @@ export default function Contact() {
           variants={itemVariants}
           className="w-full flex flex-col gap-4 mt-4  text-left p-5"
           onSubmit={handleSubmit}
-          onMouseLeave={() => setDropdown(false)}
+        onMouseLeave={() => (setDropdown1(false), setDropdown2(false))}
         >
           <div className="flex flex-col md:flex-row gap-4">
             <input
@@ -126,7 +133,18 @@ export default function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Work Email (Business domain only)"
+              onBlur={(e) => {
+                const domain = e.target.value.split("@")[1];
+                const personal = [
+                  "gmail.com",
+                  "yahoo.com",
+                  "hotmail.com",
+                  "outlook.com",
+                ];
+                if (personal.includes(domain))
+                  alert("Please use a business email address.");
+              }}
               value={formData.email}
               onChange={handleChange}
               className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
@@ -141,106 +159,160 @@ export default function Contact() {
             value={formData.companyName}
             onChange={handleChange}
             className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
+            required
           />
 
-          <div className="flex flex-col bg-transparent rounded-lg border border-iris/50 p-4">
-            <p className="font-bold pb-4">Organization Strength</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {["1-50", "51-200", "201-1000", "1000+"].map((range) => (
-                <label
-                  key={range}
-                  className="flex items-center border rounded-lg border-iris/50 p-2 font-semibold gap-3 cursor-pointer hover:border-iris "
-                >
-                  <input
-                    type="radio"
-                    name="strenght"
-                    value={range}
-                    checked={formData.strenght === range}
-                    onChange={handleChange}
-                    className="peer appearance-none h-4 w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris"
-                  />
-                  {range}
-                </label>
-              ))}
+
+          <div className="space-y-4 border border-iris/50 p-4 rounded-lg">
+            <h3 className="text-xl font-semibold ">
+               Deployment Selection
+            </h3>
+            <p className="text-sm text-gray-400">
+              How will you host the Private Intelligence Layer?
+            </p>
+            <div className="flex flex-col gap-4">
+              <label className="flex items-start gap-3 p-4 border border-iris/30 rounded-lg cursor-pointer hover:bg-iris/10">
+                <input
+                  type="radio"
+                  name="Deployment"
+                  value="Self-Hosted"
+                  className="mt-1"
+                  onChange={handleChange}
+                  required
+                />
+                <div>
+                  <span className="font-bold block">
+                    Self-Hosted (Free Software License)
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    You provide the infrastructure (AWS/Azure/GCP/On-Prem). We
+                    deploy the application.
+                  </span>
+                </div>
+              </label>
+              <label className="flex items-start gap-3 p-4 border border-iris/30 rounded-lg cursor-pointer hover:bg-iris/10">
+                <input
+                  type="radio"
+                  name="Deployment"
+                  value="Managed Pilot"
+                  className="mt-1"
+                  onChange={handleChange}
+                />
+                <div>
+                  <span className="font-bold block">
+                    Managed Pilot (Hardware Pass-through)
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    We provision GPU and cloud resources. Infrastructure costs
+                    are billed to your organization.
+                  </span>
+                </div>
+              </label>
             </div>
           </div>
 
-          <div className="relative">
-            <p className="font-bold pb-2">Infrastructure Type</p>
-            <div
-              className="flex justify-between items-center cursor-pointer border border-iris/50 rounded p-4 bg-transparent"
-              onClick={() => setDropdown(!dropdown)}
-            >
-              {formData.infraType || "Select Type"}
-              <IoIosArrowDown
-                className={`transition-transform ${dropdown ? "rotate-180" : ""}`}
-              />
-            </div>
-            {dropdown && (
-              <div className="absolute w-full mt-2 bg-[#120d28] border border-iris rounded-lg shadow-xl overflow-hidden">
-                {[
-                  "On-Premise Rack",
-                  "Private Cloud (VPC)",
-                  "Dedicated Bare Metal",
-                ].map((type) => (
-                  <p
-                    key={type}
-                    className="p-4 hover:bg-iris hover:bg-opacity-20  hover:text-white cursor-pointer transition-colors"
-                    onClick={() => handleDropdownSelect(type)}
-                  >
-                    {type}
-                  </p>
-                ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-iris/50 p-4 rounded-lg">
+            <div className="relative">
+              <p className="font-bold pb-2">Primary Cloud Provider</p>
+              <div
+                className="flex justify-between items-center cursor-pointer border border-iris/50 rounded p-4 bg-transparent"
+                onClick={() => setDropdown1(!dropdown1)}
+              >
+                {formData.Primary_Cloud_Provider || "Select Type"}
+                <IoIosArrowDown
+                  className={`transition-transform ${dropdown1 ? "rotate-180" : ""}`}
+                />
               </div>
-            )}
+
+              {dropdown1 && (
+                <div className="absolute w-full mt-2 bg-[#120d28] border z-50 border-iris rounded-lg shadow-xl overflow-hidden">
+                  {["AWS", "Azure", "GCP", "On-Prem", "Other,Not Applicable"].map((type) => (
+                    <p
+                      key={type}
+                      className="p-4 hover:bg-iris hover:bg-opacity-20  hover:text-white cursor-pointer transition-colors"
+                      onClick={() => handleDropdown1Select(type)}
+                    >
+                      {type}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="relative">
+              <p className="font-bold pb-2">GPU Availability</p>
+              <div
+                className="flex justify-between items-center cursor-pointer border border-iris/50 rounded p-4 bg-transparent"
+                onClick={() => setDropdown2(!dropdown2)}
+              >
+                {formData.GPU_Availability || "Select Type"}
+                <IoIosArrowDown
+                  className={`transition-transform ${dropdown2 ? "rotate-180" : ""}`}
+                />
+              </div>
+              {dropdown2 && (
+                <div className="absolute w-full mt-2 bg-[#120d28] border border-iris rounded-lg shadow-xl overflow-hidden">
+                  {[
+                    "On-Premise Rack",
+                    "Private Cloud (VPC)",
+                    "Dedicated Bare Metal",
+                    "Not Applicable",
+                  ].map((type) => (
+                    <p
+                      key={type}
+                      className="p-4 hover:bg-iris hover:bg-opacity-20  hover:text-white cursor-pointer transition-colors"
+                      onClick={() => handleDropdown2Select(type)}
+                    >
+                      {type}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
-          <textarea
-            placeholder="Your Message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={4}
-            className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:outline-none focus:border-iris transition-colors"
-          />
+          <div className="space-y-4">
+            <textarea
+              name="use_case"
+              placeholder="Briefly describe your use case"
+              rows={3}
+              className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:border-iris outline-none"
+              value={formData.use_case}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message / Special Requests"
+              rows={3}
+              className="w-full bg-transparent border border-iris/50 rounded-lg p-4 focus:border-iris outline-none"
+              value={formData.message}
+              onChange={handleChange}
+            />
+          </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-sm flex items-center gap-3 cursor-pointer">
-              <input
-                type="radio"
-                name="GPU_enabled"
-                value="The organization confirms the availability of GPU-enabled VMs with SSH access."
-                onChange={handleChange}
-                className="peer appearance-none h-3 w-3 md:h-4 md:w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris"
-              />
-              I confirm our Organization can provide GPU-enabled VMs with SSH
-            </label>
-            <label className="text-sm flex items-center gap-3 cursor-pointer">
-              <input
-                type="radio"
-                name="zeroData_accepted"
-                value="It is confirmed that this deployment is strictly on-premise, ensuring zero data export."
-                onChange={handleChange}
-                className="peer appearance-none h-3 md:h-4 w-4 rounded-full border border-iris bg-tranparent checked:border-white checked:bg-iris "
-              />
-              I understand this deployment is strictly on-premise with zero data
-              export.
-            </label>
+
+          <div className="p-4 bg-iris/10 border-l-4 border-iris rounded text-sm text-gray-300">
+            <p>
+              <strong>Pilot Terms:</strong> Software license fees are waived
+              for self-hosted pilots. Managed Pilots require the customer to
+              cover all underlying GPU/compute costs at market rates.
+            </p>{" "}
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="bg-iris hover:bg-opacity-90 text-white font-bold py-4 rounded-lg transition-all active:scale-[0.98] flex items-center justify-center"
+            className="bg-iris hover:bg-opacity-90 text-white font-bold py-4 rounded-lg transition-all active:scale-[0.98] flex items-center cursor-pointer justify-center"
           >
             {loading ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full "
               />
             ) : (
-              "Send Message"
+              "Request Pilot Access "
             )}
           </button>
         </motion.form>
@@ -248,3 +320,4 @@ export default function Contact() {
     </section>
   );
 }
+

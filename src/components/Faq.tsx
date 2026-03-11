@@ -101,12 +101,13 @@ export default function Faq() {
           whileInView="visible"
           variants={containerVariants}
           viewport={{ once: true, amount: 0.2 }}
-          className="w-full justify-center flex flex-col items-center gap-3 transition duration-300"
+          className="w-full justify-center flex flex-col items-center gap-3 cursor-pointer transition duration-300"
         >
           {faqData.map((faq, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
+               onClick={() => toggleFaq(index)}
               className="border w-[80%] md:w-[40%] border-[#5D3FD3]/20 px-4 py-5 flex flex-col rounded-xl gap-3"
             >
               <div className="flex gap-1 items-center justify-between">
@@ -114,7 +115,7 @@ export default function Faq() {
                 <MdOutlineKeyboardArrowDown
                   className={`cursor-pointer border border-[#5D3FD3]/20 rounded-full text-4xl p-1 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
                     }`}
-                  onClick={() => toggleFaq(index)}
+                 
                 />
               </div>
 

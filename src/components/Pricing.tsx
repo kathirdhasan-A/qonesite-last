@@ -87,7 +87,7 @@ export default function Packages() {
             <div className="flex-1 flex flex-col gap-4 text-white">
               <h2 className="text-2xl font-bold">Extended Pilot</h2>
               <p className="text-sm opacity-90">Architectural Integration</p>
-              <p className="text-xl font-semibold">$ 4,999.00/90 Days</p>
+              <p className="text-xl font-semibold">$ Paid / 90 Days</p>
 
               <div className="flex items-start">
                 <RiArrowDropRightFill className="text-3xl shrink-0" />

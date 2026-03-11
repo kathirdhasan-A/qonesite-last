@@ -1,4 +1,4 @@
-import YouTube, { YouTubeProps } from "react-youtube";
+
 import { IoCloudOutline } from "react-icons/io5";
 import { FaShieldAlt } from "react-icons/fa";
 import { IoIosRefresh } from "react-icons/io";
@@ -26,18 +26,18 @@ const itemVariants: Variants = {
 };
 
 export default function Visual() {
-  const opts: YouTubeProps["opts"] = {
-    height: "100%",
-    width: "100%",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
+
 
   return (
     <div className="md:h-screen pt-20 md:pt-0 back px-2 flex flex-col justify-center items-center" id="samples">
       <div className="h-55 w-[90%] md:h-[75%] md:w-[69%] p-2 border-3 rounded-lg border-[#5d3fd326] shadow-[0_14px_50px_#5d3fd326] flex justify-center items-center cursor-pointer">
-        <YouTube videoId="quvdBZpYgoA" className="w-full h-full " opts={opts} />
+        <video
+        controls
+        
+         >
+          <source src="/promo.mp4" type="video/mp4" />
+           Your browser does not support the video tag.
+        </video>
       </div>
       <motion.div
         initial="hidden"

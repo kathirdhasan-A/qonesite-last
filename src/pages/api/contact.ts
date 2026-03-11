@@ -9,16 +9,16 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  console.log(req.body);
 
   const {
     name,
     email,
     message,
     companyName,
-    infraType,
-    GPU_enabled,
-    zeroData_accepted,
+    Deployment,
+    Primary_Cloud_Provider,
+    use_case,
+    GPU_Availability,
   } = req.body;
 
   if (!name || !email || !message) {
@@ -39,53 +39,72 @@ export default async function handler(
       to: "qone@quantrail-data.com",
       subject: `New Contact Form Message from ${name}`,
       html: `
-<div style="background-color: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 40px; border: 1px solid #222; border-radius: 16px; max-width: 600px; margin: 20px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+<div style="background: radial-gradient(circle at top left, #1a1a2e, #0a0a0a); color: #e0e0e0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; max-width: 600px; margin: 20px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.7);">
   
-  <!-- Header with Gradient Line -->
-  <h2 style="color: #ffffff; margin-bottom: 5px; font-weight: 600; letter-spacing: 0.5px;">New Submission</h2>
-  <p style="color: #7c4dff; font-size: 14px; margin-top: 0; margin-bottom: 25px; text-transform: uppercase; font-weight: bold;">Qone Landing Page</p>
-  
-  <div style="background: linear-gradient(90deg, #7c4dff, #3f51b5); height: 2px; width: 60px; margin-bottom: 30px; border-radius: 2px;"></div>
+  <!-- Header Section -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px;">
+    <div>
+      <h2 style="color: #ffffff; margin: 0; font-weight: 700; letter-spacing: -0.5px; font-size: 24px;">New Submission</h2>
+      <p style="color: #9d7aff; font-size: 13px; margin: 4px 0 0 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">Qone Landing Page</p>
+    </div>
+  </div>
 
   <!-- Contact Details Grid -->
-  <div style="margin-bottom: 25px;">
-    <div style="margin-bottom: 15px;">
-      <span style="color: #7c4dff; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: bold;">Full Name</span>
-      <span style="font-size: 16px; color: #ffffff;">${name}</span>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+    <div style="grid-column: span 1;">
+      <label style="color: #666; font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px;">Full Name</label>
+      <span style="font-size: 15px; color: #ffffff; font-weight: 500;">${name}</span>
     </div>
-
-    <div style="margin-bottom: 15px;">
-      <span style="color: #7c4dff; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: bold;">Email Address</span>
-      <a href="mailto:${email}" style="font-size: 16px; color: #00bcd4; text-decoration: none;">${email}</a>
+    <div style="grid-column: span 1;">
+      <label style="color: #666; font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px;">Company</label>
+      <span style="font-size: 15px; color: #ffffff; font-weight: 500;">${companyName}</span>
     </div>
-
-    <div style="margin-bottom: 15px;">
-      <span style="color: #7c4dff; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: bold;">Company & Infrastructure</span>
-      <span style="font-size: 16px; color: #ffffff;">${companyName} • <span style="color: #bbb;">${infraType}</span></span>
+    <div style="grid-column: span 2;">
+      <label style="color: #666; font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px;">Email Address</label>
+      <a href="mailto:${email}" style="font-size: 15px; color: #00e5ff; text-decoration: none; border-bottom: 1px solid rgba(0, 229, 255, 0.2);">${email}</a>
     </div>
   </div>
 
-  <!-- Agreements / Tags -->
-  <div style="margin-bottom: 25px; display: flex; gap: 10px; flex-wrap: wrap;">
-    <span style="background-color: #1a1a1a; border: 1px solid #333; padding: 6px 12px; border-radius: 20px; font-size: 12px; color: #00e676;">
-      ● GPU: ${GPU_enabled}
-    </span>
-    <span style="background-color: #1a1a1a; border: 1px solid #333; padding: 6px 12px; border-radius: 20px; font-size: 12px; color: #00e676;">
-      ● Zero Data: ${zeroData_accepted}
-    </span>
+  <!-- Infrastructure Tags -->
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px;">
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 100px; font-size: 12px;">
+      <span style="color: #00e676; margin-right: 6px;">●</span> <span style="color: #aaa;">Deployment:</span> <strong style="color: #eee;">${Deployment}</strong>
+    </div>
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 100px; font-size: 12px;">
+      <span style="color: #00e676; margin-right: 6px;">●</span> <span style="color: #aaa;">Cloud:</span> <strong style="color: #eee;">${Primary_Cloud_Provider}</strong>
+    </div>
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 100px; font-size: 12px;">
+      <span style="color: #00e676; margin-right: 6px;">●</span> <span style="color: #aaa;">GPU:</span> <strong style="color: #eee;">${GPU_Availability}</strong>
+    </div>
   </div>
 
-  <!-- Message Box -->
-  <span style="color: #7c4dff; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 8px; font-weight: bold;">Message</span>
-  <div style="background-color: #141414; padding: 20px; border-radius: 12px; color: #bbbbbb; line-height: 1.6; border-left: 4px solid #7c4dff;">
-    ${message}
+  <!-- Content Boxes -->
+  <div style="display: flex; flex-direction: column; gap: 15px;">
+    <div>
+      <label style="color: #7c4dff; font-size: 11px; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        Message
+      </label>
+      <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 14px; color: #bbb; line-height: 1.6; border: 1px solid rgba(255,255,255,0.05); font-size: 14px;">
+        ${message}
+      </div>
+    </div>
+
+    <div>
+      <label style="color: #7c4dff; font-size: 11px; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        Use Case
+      </label>
+      <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 14px; color: #bbb; line-height: 1.6; border: 1px solid rgba(255,255,255,0.05); font-size: 14px;">
+        ${use_case}
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <hr style="border: 0; border-top: 1px solid #222; margin: 30px 0 20px 0;" />
-  <p style="font-size: 11px; color: #666; text-align: center; letter-spacing: 0.5px;">
-    System generated notification via <strong>Qone Infrastructure</strong>
-  </p>
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+    <p style="font-size: 11px; color: #555; letter-spacing: 1px;">
+      SECURED NOTIFICATION // <strong style="color: #777;">QONE INFRASTRUCTURE</strong>
+    </p>
+  </div>
 </div>
 
   `,
