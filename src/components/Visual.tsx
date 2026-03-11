@@ -35,7 +35,7 @@ export default function Visual() {
         controls
         
          >
-          <source src="/promo.mp4" type="video/mp4" />
+          <source src="https://mfqygagxacivvvnm.public.blob.vercel-storage.com/promo%20%281%29.mp4" type="video/mp4" />
            Your browser does not support the video tag.
         </video>
       </div>
