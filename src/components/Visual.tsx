@@ -66,12 +66,12 @@ export default function Visual() {
         />
         {ended && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70">
-            <p className="text-white text-lg mb-4">Thanks for watching! 🚀</p>
+            <p className="text-white text-lg mb-4">Thanks for watching!</p>
             <button
               onClick={replayVideo}
-              className="px-4 py-2 bg-[#5D3FD3] text-white rounded-lg shadow-lg hover:bg-[#4a2fb3] transition"
+              className="px-4 py-2 cursor-pointer bg-[#5D3FD3] text-white rounded-lg shadow-lg hover:bg-[#4a2fb3] transition"
             >
-              Rewatch Video
+              watch again
             </button>
           </div>
         )}
