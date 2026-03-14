@@ -1,4 +1,5 @@
 import { Variants,motion } from "framer-motion";
+import Head from "next/head";
 
 
 const containerVariants: Variants = {
@@ -20,6 +21,30 @@ const itemVariants: Variants = {
 
 export default function About() {
   return (
+
+<>
+      <Head>
+        <title>About QuantrailData | Secure AI Solutions</title>
+        <meta
+          name="description"
+          content="Learn about QuantrailData's mission to build secure AI solutions without data leakage. We empower organizations to own their data safely."
+        />
+        <meta
+          name="keywords"
+          content="QuantrailData, AI, secure data, enterprise AI, Next.js portfolio"
+        />
+        <meta property="og:title" content="About QuantrailData" />
+        <meta
+          property="og:description"
+          content="We build AI solutions that run securely on your hardware, enabling organizations to own their data without third-party risks."
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+    
     <section id="about" className="back py-20 px-6 md:px-12 bg-black text-white">
       <motion.div 
               initial="hidden"
@@ -55,5 +80,6 @@ export default function About() {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 }1
