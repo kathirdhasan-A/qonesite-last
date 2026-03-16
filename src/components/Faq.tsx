@@ -2,6 +2,8 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
+import SEO from "./SEO";
+import { faqMeta } from "@/meta/faqMeta";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -82,62 +84,65 @@ export default function Faq() {
   };
 
   return (
-    <div className="back pb-10" id="faqs">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col justify-evenly gap-4  items-center "
-      >
-        <motion.div variants={itemVariants} className="flex justify-center">
-          <h1 className="text-2xl w-[60%] sm:text-3xl md:text-5xl font-semibold text-white text-center">
-            Frequently asked questions
-          </h1>
-        </motion.div>
-
+    <>
+    <SEO meta={faqMeta}/>
+      <div className="back pb-10" id="faqs">
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={containerVariants}
           viewport={{ once: true, amount: 0.2 }}
-          className="w-full justify-center flex flex-col items-center gap-3 cursor-pointer transition duration-300"
+          className="flex flex-col justify-evenly gap-4  items-center "
         >
-          {faqData.map((faq, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-               onClick={() => toggleFaq(index)}
-              className="border w-[80%] md:w-[40%] border-[#5D3FD3]/20 px-4 py-5 flex flex-col rounded-xl gap-3"
-            >
-              <div className="flex gap-1 items-center justify-between">
-                <h2 className="text-sm md:text-lg font-semibold">{faq.question}</h2>
-                <MdOutlineKeyboardArrowDown
-                  className={`cursor-pointer border border-[#5D3FD3]/20 rounded-full text-4xl p-1 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
-                    }`}
-                 
-                />
-              </div>
+          <motion.div variants={itemVariants} className="flex justify-center lg:pb-10 pb-5">
+            <h1 className="text-2xl w-[60%] sm:text-3xl md:text-5xl font-semibold text-white text-center">
+              Frequently asked questions
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={containerVariants}
+            viewport={{ once: true, amount: 0.2 }}
+            className="w-full justify-center flex flex-col items-center gap-3 cursor-pointer transition duration-300"
+          >
+            {faqData.map((faq, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                onClick={() => toggleFaq(index)}
+                className="border w-[80%] md:w-[40%] border-[#5D3FD3]/20 px-4 py-5 flex flex-col rounded-xl gap-3"
+              >
+                <div className="flex gap-1 items-center justify-between">
+                  <h2 className="text-sm md:text-lg font-semibold">{faq.question}</h2>
+                  <MdOutlineKeyboardArrowDown
+                    className={`cursor-pointer border border-[#5D3FD3]/20 rounded-full text-4xl p-1 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                      }`}
+
+                  />
+                </div>
 
 
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    key="answer"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    style={{ overflow: "hidden" }}
-                  >
-                    <p>{faq.answer}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      key="answer"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <p>{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 }

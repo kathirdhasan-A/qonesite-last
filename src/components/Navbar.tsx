@@ -26,18 +26,20 @@ export default function Navbar() {
         viewport={{ once: true, amount: 0.2 }}
         className="flex w-full h-15 pt-5 px-2 lg:pt-15 items-center justify-between lg:justify-around"
       >
-        <div className="flex items-center justify-center gap-2">
-          <img src="/appLogo.png" alt="qunt" className="lg:w-12 w-8 rounded " />
-          <h1 className="font-bold text-[#5D3FD3] lg:text-2xl">Qone</h1>
-        </div>
+        <div className="flex items-center gap-2">
+    <img src="/Qlogo.png" alt="QOne logo" className="w-8 lg:w-12 rounded-md" />
+    <h1 className="font-bold text-[#5D3FD3] text-xl lg:text-3xl tracking-wide">One</h1>
+  </div>
+
 
         <div className="w-[45%] hidden lg:flex justify-between text-lg transition text-[#A0A0A0]">
           {[
-            { label: "About Us", href: "#about" },
-            { label: "Features", href: "#features" },
             { label: "Solutions", href: "#solutions" },
+            { label: "Features", href: "#features" },
             { label: "Pricing", href: "#pricing" },
             { label: "FAQs", href: "#faqs" },
+            { label: "Blogs", href: "https://quantrail-data.com/blog/" },
+            { label: "About Us", href: "#about" },
           ].map((item, i) => (
             <Link
               key={i}
@@ -92,11 +94,12 @@ export default function Navbar() {
 
         <ul className="flex flex-col items-center gap-6 py-6">
           {[
-            { label: "About Us", href: "#about" },
-            { label: "Features", href: "#features" },
             { label: "Solutions", href: "#solutions" },
+            { label: "Features", href: "#features" },
             { label: "Pricing", href: "#pricing" },
             { label: "FAQs", href: "#faqs" },
+            { label: "Blogs", href: "https://quantrail-data.com/blog/" },
+            { label: "About Us", href: "#about" },
           ].map((item, i) => (
             <li key={i}>
               <Link

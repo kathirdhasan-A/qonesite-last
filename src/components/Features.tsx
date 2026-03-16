@@ -6,6 +6,8 @@ import { IoMdSearch } from "react-icons/io";
 import { PiClipboardTextBold } from "react-icons/pi";
 import { HiOutlineKey } from "react-icons/hi";
 import { FaServer } from "react-icons/fa";
+import SEO from "./SEO";
+import { featuresMeta } from "@/meta/featuresMeta";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -28,6 +30,9 @@ const itemVariants: Variants = {
 
 export default function Features() {
   return (
+<>
+<SEO meta={featuresMeta}/>
+
     <div
       className="back transition duration-300  justify-evenly flex flex-col"
       id="features"
@@ -145,6 +150,7 @@ export default function Features() {
         </motion.div>
       </motion.div>
     </div>
+</>
   );
 }
 

@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { RiArrowDropRightFill } from "react-icons/ri";
+import SEO from "./SEO";
+import { packagesMeta } from "@/meta/packagesMeta";
 
 export default function Packages() {
   return (
+<>
+
+<SEO meta={packagesMeta}/>
     <div className="back " id="pricing">
-      <motion.div className=" flex flex-col items-center justify-center gap-10 pb-10">
-        <div className="text-center px-4 max-w-2xl">
+      <motion.div className=" flex flex-col items-center justify-center gap-10 lg:py-20 py-10">
+        <div className="text-center px-4 pb-10 max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Select Your Pilot Phase
           </h1>
@@ -144,5 +149,6 @@ export default function Packages() {
         </div>
       </motion.div>
     </div>
+</>
   );
 }

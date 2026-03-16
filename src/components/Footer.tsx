@@ -44,8 +44,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-300/90 text-center">
-              Simplifying database operations with speed, clarity, and secure
-              access.
+              AI Without Exfiltration. Stop the leak. Deploy private intelligence on your own infrastructure.
             </p>
           </motion.div>
           <motion.div
