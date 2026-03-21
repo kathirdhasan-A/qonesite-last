@@ -1,7 +1,4 @@
 import { Variants,motion } from "framer-motion";
-import Head from "next/head";
-import SEO from "./SEO";
-import { aboutMeta } from "@/meta/aboutMeta";
 
 
 const containerVariants: Variants = {
@@ -24,8 +21,6 @@ const itemVariants: Variants = {
 export default function About() {
   return (
 
-<>
-      <SEO meta={aboutMeta} />
     <section id="about" className="back py-20 px-6 md:px-12 bg-black text-white">
       <motion.div 
               initial="hidden"
@@ -61,6 +56,5 @@ export default function About() {
         </motion.div>
       </motion.div>
     </section>
-    </>
   );
 }1

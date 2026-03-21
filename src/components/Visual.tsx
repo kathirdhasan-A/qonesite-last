@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import YouTube, { YouTubeProps, YouTubePlayer } from "react-youtube";
-import { IoCloudOutline } from "react-icons/io5";
+import { IoMdRefresh } from "react-icons/io";
 import { FaShieldAlt } from "react-icons/fa";
 import { IoIosRefresh, IoIosDesktop } from "react-icons/io";
 import { IoLockClosedOutline } from "react-icons/io5";
@@ -32,9 +32,9 @@ export default function Visual() {
     width: "100%",
     playerVars: {
       autoplay: 0,
-      rel: 0,            // only show videos from your channel
-      modestbranding: 1, // minimal YouTube branding
-      controls: 1,       // keep playback controls
+      rel: 0,            
+      modestbranding: 1, 
+      controls: 1,      
       showinfo: 0,
     },
   };
@@ -45,9 +45,9 @@ export default function Visual() {
 
   const replayVideo = () => {
     if (playerRef.current) {
-      playerRef.current.seekTo(0); // restart from beginning
-      playerRef.current.playVideo(); // play again
-      setEnded(false); // hide overlay
+      playerRef.current.seekTo(0); 
+      playerRef.current.playVideo(); 
+      setEnded(false); 
     }
   };
 
@@ -65,17 +65,20 @@ export default function Visual() {
           onEnd={() => setEnded(true)}
         />
         {ended && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70">
-            <p className="text-white text-lg mb-4">Thanks for watching!</p>
+          <div className="absolute inset-0 flex flex-col items-center bg-black justify-center  bg-opacity-70">
+            <img src="/thumbnail.png" alt="" className="opacity-50 border h-full border-black rounded"  />
             <button
               onClick={replayVideo}
-              className="px-4 py-2 cursor-pointer bg-[#5D3FD3] text-white rounded-lg shadow-lg hover:bg-[#4a2fb3] transition"
+              className="px-6 py-3 flex justify-center group items-center gap-1 absolute font-semibold cursor-pointer bg-white text-iris rounded-full shadow-lg hover:scale-105 transition"
             >
-              watch again
+              <IoMdRefresh className="text-lg group-hover:rotate-180 transition-all duration-300 "/>
+              Watch again
             </button>
           </div>
         )}
       </div>
+
+   
 
       <motion.div
         initial="hidden"

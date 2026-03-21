@@ -17,7 +17,7 @@ const navVariants: Variants = {
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div >
+    <div>
       {/* Navbar */}
       <motion.div
         initial="hidden"
@@ -26,11 +26,20 @@ export default function Navbar() {
         viewport={{ once: true, amount: 0.2 }}
         className="flex w-full h-15 pt-5 px-2 lg:pt-15 items-center justify-between lg:justify-around"
       >
-        <div className="flex items-center gap-2">
-    <img src="/Qlogo.png" alt="QOne logo" className="w-8 lg:w-12 rounded-md" />
-    <h1 className="font-bold text-[#5D3FD3] text-xl lg:text-3xl tracking-wide">One</h1>
-  </div>
-
+        <div className="flex items-center gap-0.5 ml-2 lg:gap-1">
+          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
+            Q
+          </h1>
+          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
+            O
+          </h1>
+          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
+            n
+          </h1>
+          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
+            e
+          </h1>
+        </div>
 
         <div className="w-[45%] hidden lg:flex justify-between text-lg transition text-[#A0A0A0]">
           {[
@@ -55,8 +64,8 @@ export default function Navbar() {
           <Link href={"#contact"}>
             <button className="px-3 py-1.5 bg-[#5D3FD3] border border-transparent lg:scale-[0.96] lg:hover:scale-[0.99]  group lg:px-6 lg:py-3 rounded-full cursor-pointer items-center justify-center gap-2 flex font-semibold hover:bg-iris/20 hover:border-iris">
               <span className="flex gap-1 ">
-              <MdPhone className=" md:text-xl group-hover:hidden transition-all" />
-              <MdPhoneInTalk className=" md:text-xl hidden group-hover:block transition-all duration-300" />
+                <MdPhone className=" md:text-xl group-hover:hidden transition-all" />
+                <MdPhoneInTalk className=" md:text-xl hidden group-hover:block transition-all duration-300" />
               </span>
               <span className="hidden lg:block">Contact us</span>
               <span className="lg:hidden text-sm">Contact</span>
@@ -112,7 +121,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
       </motion.div>
     </div>
   );

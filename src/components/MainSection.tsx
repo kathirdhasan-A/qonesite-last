@@ -42,6 +42,9 @@ export default function MainSection() {
 
 
   return (
+
+
+
     <div
       id="home"
       className="flex back flex-col lg:justify-around items-center bg-black lg:h-full pt-5 px-2 lg:pt-15"

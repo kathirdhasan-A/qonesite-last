@@ -44,7 +44,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-300/90 text-center">
-              AI Without Exfiltration. Stop the leak. Deploy private intelligence on your own infrastructure.
+                     AI Without Exfiltration. Stop the leak. Deploy private intelligence on your own infrastructure.
             </p>
           </motion.div>
           <motion.div
@@ -54,14 +54,14 @@ export default function Footer() {
 
             <div className="flex flex-row md:flex-row gap-4">
               <a
-                href="#"
-                className="hover:text-[#5D3FD3] text-gray-300/90 flex md:justify-center md:items-center gap-1"
+                href="https://x.com/quantrail_data"
+                className="hover:text-white border-b  group border-transparent hover:border-white transition-all ease-in text-gray-300/90 flex md:justify-center md:items-center gap-1"
               >
                 <FaTwitter className="text-white/90 " /> Twitter
               </a>
               <a
-                href="#"
-                className="hover:text-[#5D3FD3] text-gray-300/90 flex md:justify-center md:items-center gap-1"
+                href="https://www.linkedin.com/company/quantrail-data/"
+                className="hover:text-white border-b  group border-transparent hover:border-white transition-all ease-in text-gray-300/90 flex md:justify-center md:items-center gap-1"
               >
                 <FaLinkedinIn className="text-white/90" />
                 LinkedIn

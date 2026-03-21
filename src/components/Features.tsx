@@ -6,8 +6,7 @@ import { IoMdSearch } from "react-icons/io";
 import { PiClipboardTextBold } from "react-icons/pi";
 import { HiOutlineKey } from "react-icons/hi";
 import { FaServer } from "react-icons/fa";
-import SEO from "./SEO";
-import { featuresMeta } from "@/meta/featuresMeta";
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,8 +29,7 @@ const itemVariants: Variants = {
 
 export default function Features() {
   return (
-<>
-<SEO meta={featuresMeta}/>
+
 
     <div
       className="back transition duration-300  justify-evenly flex flex-col"
@@ -130,7 +128,7 @@ export default function Features() {
         return (
           <div
             key={index}
-            className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-90 gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
+            className="bg-[#5D3FD3] group flex flex-col justify-between w-full max-w-[75%] lg:max-w-full lg:h-auto gap-5 p-4 rounded-lg border border-transparent hover:bg-[#5D3FD3]/10 hover:scale-102 hover:border-[#5D3FD3] transition duration-300"
           >
             <div className="flex items-center lg:flex-col lg:items-start lg:gap-5 w-full justify-between">
           
@@ -150,7 +148,6 @@ export default function Features() {
         </motion.div>
       </motion.div>
     </div>
-</>
   );
 }
 

@@ -13,6 +13,9 @@ module.exports = {
         charcoal: "#1C1C1C",
         softgray: "#F5F5F5",
       },
+      fontFamily: {
+        lovelo1: ['var(--lovelo-black)'], // Maps to class 'font-custom'
+      },
        
     },
   },

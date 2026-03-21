@@ -1,6 +1,5 @@
 import { Variants, motion } from "framer-motion";
-import SEO from "./SEO";
-import { solutionsMeta } from "@/meta/solutionsMeta";
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -21,8 +20,6 @@ const itemVariants: Variants = {
 
 export default function Solutions() {
   return (
-    <>
-      <SEO meta={solutionsMeta} />
       <section id="solutions" className="back pt-10 md:py-20 px-6 md:px-12 bg-black text-white">
         <motion.div
           initial="hidden"
@@ -66,6 +63,6 @@ export default function Solutions() {
           </motion.div>
         </motion.div>
       </section>
-    </>
+
   );
 }

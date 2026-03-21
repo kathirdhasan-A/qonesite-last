@@ -2,8 +2,6 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
-import SEO from "./SEO";
-import { faqMeta } from "@/meta/faqMeta";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -84,8 +82,6 @@ export default function Faq() {
   };
 
   return (
-    <>
-    <SEO meta={faqMeta}/>
       <div className="back pb-10" id="faqs">
         <motion.div
           initial="hidden"
@@ -143,6 +139,5 @@ export default function Faq() {
           </motion.div>
         </motion.div>
       </div>
-    </>
   );
 }

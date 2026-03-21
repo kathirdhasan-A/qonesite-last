@@ -11,13 +11,18 @@ interface SEOProps {
       description: string;
       type: string;
       url: string;
-      image: string;
+      images: {
+        url:string,
+        width:number,
+        height:number,
+        alt:string
+      };
     };
     twitter?: {
       card: string;
       title: string;
       description: string;
-      image: string;
+      images: string;
     };
   };
 }
@@ -38,7 +43,7 @@ export default function SEO({ meta }: SEOProps) {
           <meta property="og:description" content={meta.openGraph.description} />
           <meta property="og:type" content={meta.openGraph.type} />
           <meta property="og:url" content={meta.openGraph.url} />
-          <meta property="og:image" content={meta.openGraph.image} />
+          <meta property="og:image" content={meta.openGraph.images.url} />
         </>
       )}
 
@@ -48,7 +53,7 @@ export default function SEO({ meta }: SEOProps) {
           <meta name="twitter:card" content={meta.twitter.card} />
           <meta name="twitter:title" content={meta.twitter.title} />
           <meta name="twitter:description" content={meta.twitter.description} />
-          <meta name="twitter:image" content={meta.twitter.image} />
+          <meta name="twitter:image" content={meta.twitter.images} />
         </>
       )}
     </Head>
