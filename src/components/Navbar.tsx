@@ -101,7 +101,7 @@ export default function Navbar() {
               <div
                 key={i}
                 // href={'#'}
-                onClick={() => navigate.push(`${item.href}`)}
+                onClick={() => navigate.push(`./${item.href}`)}
                 className="hover:border-b hover:border-b-[#5D3FD3] border-b border-transparent hover:text-[#5D3FD3] transition duration-300 ease-in-out"
               >
                 {item.label}
