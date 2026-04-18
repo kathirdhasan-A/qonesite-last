@@ -5,6 +5,9 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { MdPhoneInTalk } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
+import { label } from "framer-motion/client";
+import { useRouter } from "next/navigation";
 
 const navVariants: Variants = {
   hidden: { opacity: 0 },
@@ -15,7 +18,10 @@ const navVariants: Variants = {
 };
 
 export default function Navbar() {
+  const navigate = useRouter(); 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navDrop, setNavDrop] = useState("");
+  const logo = "QONE";
   return (
     <div>
       {/* Navbar */}
@@ -26,38 +32,82 @@ export default function Navbar() {
         viewport={{ once: true, amount: 0.2 }}
         className="flex w-full h-15 pt-5 px-2 lg:pt-15 items-center justify-between lg:justify-around"
       >
-        <div className="flex items-center gap-0.5 ml-2 lg:gap-1">
-          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
-            Q
-          </h1>
-          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
-            O
-          </h1>
-          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
-            n
-          </h1>
-          <h1 className="text-sm lg:text-3xl font-lovelo1 bg-iris rounded w-5 lg:w-10 flex justify-center items-center pt-0.5 lg:pt-1 m-0">
-            e
-          </h1>
+        <div className="flex items-center gap-0.5 lg:gap-1">
+          {logo.split("").map((char, index) => {
+            return (
+              <h1
+                key={index}
+                className="text-md lg:text-2xl font-extrabold font-lovelo1 bg-white border border-white text-iris rounded w-6 h-6 lg:w-8 lg:h-8  flex justify-center items-center pt-0.5 lg:pt-1 m-0"
+              >
+                {char}
+              </h1>
+            );
+          })}
         </div>
 
-        <div className="w-[45%] hidden lg:flex justify-between text-lg transition text-[#A0A0A0]">
+        <div className=" lg:w-[55%] xl:w-[45%] hidden lg:flex justify-between text-base xl:text-lg transition text-[#A0A0A0]">
           {[
-            { label: "Solutions", href: "#solutions" },
-            { label: "Features", href: "#features" },
-            { label: "Pricing", href: "#pricing" },
-            { label: "FAQs", href: "#faqs" },
-            { label: "Blogs", href: "https://quantrail-data.com/blog/" },
-            { label: "About Us", href: "#about" },
-          ].map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              className="hover:border-b hover:border-b-[#5D3FD3] border-b border-transparent hover:text-[#5D3FD3] transition duration-300 ease-in-out"
-            >
-              {item.label}
-            </Link>
-          ))}
+            { label: "Solutions", href: "#solutions", dropdown: false },
+            { label: "Features", href: "#features", dropdown: false },
+            {
+              label: "Products",
+              href: "#",
+              dropdown: true,
+              options: ["Qurioz", "Qdocs","Qtalk", "Qcode"],
+            },
+            { label: "Pricing", href: "#pricing", dropdown: false },
+            { label: "FAQs", href: "#faqs", dropdown: false },
+            {
+              label: "Blogs",
+              href: "https://quantrail-data.com/blog/",
+              dropdown: false,
+            },
+            { label: "About Us", href: "#about", dropdown: false },
+          ].map((item, i) =>
+            item.dropdown ? (
+              <div
+                className="relative "
+                onMouseEnter={() => setNavDrop(item.label)}
+                onMouseLeave={() => setNavDrop("")}
+              >
+                <div className="flex group justify-center items-center gap-1 cursor-pointer">
+                  <p className="group-hover:text-[#5D3FD3] transition duration-300 ease-in-out">
+                    {item.label}
+                  </p>
+                  <IoIosArrowDown className="group-hover:rotate-180 transition-transform duration-300 ease-in-out group-hover:text-[#5D3FD3]" />
+                </div>
+                {navDrop === item.label && (
+                  <div
+                    className="absolute  -translate-x-1/2 top-full mt-1 w-48 flex flex-col
+                   bg-[#181032] border border-[#A0A0A0]/50 rounded-lg
+                   animate-in fade-in zoom-in-95 duration-200 z-50"
+                  >
+                    <div className="" />
+
+                    {item.options?.map((opt, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => navigate.push(`/${opt.toLowerCase()}`)}
+                        className="px-4 py-2 hover:bg-iris/20 rounded-lg text-white/60 hover:text-white/80 
+                       transition-colors cursor-pointer text-base"
+                      >
+                        {opt}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div
+                key={i}
+                // href={'#'}
+                onClick={() => navigate.push(`${item.href}`)}
+                className="hover:border-b hover:border-b-[#5D3FD3] border-b border-transparent hover:text-[#5D3FD3] transition duration-300 ease-in-out"
+              >
+                {item.label}
+              </div>
+            ),
+          )}
         </div>
 
         <div className="flex items-center gap-5">
