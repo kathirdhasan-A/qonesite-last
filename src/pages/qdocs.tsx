@@ -4,13 +4,14 @@ import { IoMdRefresh } from "react-icons/io";
 import YouTube, { YouTubeProps, YouTubePlayer } from "react-youtube";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
+import { navigate } from "next/dist/client/components/segment-cache/navigation";
+import { useRouter } from "next/router";
 
 const images = [
-  "./qdocs-man.png",
-  "./qdocs-home.png",
-  "./qdocs-man.png",
-  "./og-home.png",
-  "./og-feat.png",
+  "./qdocs/home.png",
+  "./qdocs/fileview.png",
+  "./qdocs/ocr.png",
+  "./qdocs/man.png",
 ];
 
 const myCustomFont = localFont({
@@ -26,6 +27,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
+    const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -95,11 +97,13 @@ export default function Qdocs() {
       {/* Head section */}
       <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-4xl">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Turn Document Chaos into Actionable Insights
+          Document Intelligence Within Your Own Secure Perimeter
         </h1>
-        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-2xl">
-          The AI document reader that answers your questions and summarizes
-          complex texts.
+        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-3xl">
+          QDocs brings high-precision AI analysis to your most confidential
+          document repositories. Designed to run on your company’s secure
+          hardware, we ensure that sensitive intellectual property never leaves
+          your network.
         </p>
       </div>
       {/* Feature section */}
@@ -109,27 +113,30 @@ export default function Qdocs() {
         </p>
         <div className="w-full text-center">
           <p className="text-2xl md:text-3xl font-medium max-w-3xl mx-auto mb-4">
-            Turn hours of reading into minutes of understanding.
+            The Fortress Approach to Document Analysis
           </p>
-          <p className="max-w-2xl text-sm md:text-base text-gray-500 mx-auto">
-            Using OCR, this AI reads documents just like a human, interpreting
-            context, headings, and tables. Chat with PDFs to find answers
-            instantly.
+          <p className="max-w-4xl text-sm md:text-base text-gray-500 mx-auto">
+            For the modern enterprise, the risk isn't just the data- it’s the
+            destination. QDocs eliminates the <strong className="text-iris">Cloud Leak</strong> variable by operating
+            entirely within your controlled environment. We provide leadership
+            teams with the velocity of AI-driven insights while maintaining the
+            absolute privacy of a local solution. Your documents stay on your
+            hardware, under your rules.
           </p>
         </div>
 
         <div className="flex w-full justify-center items-center my-10 md:my-20">
           <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-12 lg:gap-16">
-            <div className="relative w-full max-w-md aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
+            <div className="relative w-full max-w-xl aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
               <img
-                src="./qdocs-home.png"
+                src="./qdocs/home.png"
                 alt="Qdocs demo"
-                className="absolute top-[20%] left-[0%] w-[75%] h-auto rounded-lg border border-white/30 shadow-xl"
+                className="absolute top-[20%] left-[0%] w-[90%] h-auto rounded-lg border border-white/30 shadow-xl"
               />
               <img
-                src="./qdocs-man.png"
+                src="./qdocs/man.png"
                 alt="Qdocs user"
-                className="z-10 absolute bottom-[25%] right-[5%] w-[55%] h-auto rounded-lg border border-white/30 shadow-2xl"
+                className="z-10 absolute bottom-[15%] right-[0%] w-[70%] h-auto rounded-lg border border-white/30 shadow-2xl"
               />
             </div>
 
@@ -137,39 +144,60 @@ export default function Qdocs() {
               {[
                 {
                   id: "01",
-                  title: "Intelligent PDF Analyzer",
-                  desc: "Analyze data, compare files, and extract insights.",
+                  title: "Physical Data Residency",
+                  desc: "Since QDocs resides on your internal servers, you maintain 100% physical and digital custody of every document processed.",
                 },
                 {
                   id: "02",
-                  title: "Chat with Your Documents",
-                  desc: "Stop skimming pages and start conversing with your files.",
+                  title: "Group-Based Governance",
+                  desc: " Align document access with your organizational structure. Restricted data stays restricted, ensuring users only interact with information relevant to their clearance level.",
                 },
                 {
                   id: "03",
-                  title: "Smart Summarization",
-                  desc: "Condense lengthy documents into concise summaries.",
+                  title: "Human-Verified Accuracy",
+                  desc: "Move beyond Black Box AI. Our interface allows subject matter experts to refine and update extracted content, ensuring the system’s output is as accurate as your best analysts.",
                 },
                 {
                   id: "04",
-                  title: "Context-Aware Search",
-                  desc: "Find exactly what you need with semantic search.",
+                  title: "Total IP Insulation",
+                  desc: "Protect your competitive advantage. By keeping processing local, you ensure that proprietary strategies, contracts, and R&D data are never used to train external models.",
                 },
-              ].map((feature) => (
-                <div key={feature.id} className="flex gap-4 items-start">
-                  <span className="font-lovelo1 text-iris shrink-0 text-lg">
-                    {feature.id}.
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="font-lovelo1 text-lg leading-tight">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 max-w-xs">
-                      {feature.desc}
-                    </p>
+              ].map((feature) => {
+                const highlightText = (text: string) => {
+                  const keywords = ["Black box"];
+
+                  const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+                  const parts = text.split(regex);
+
+                  return parts.map((part, i) =>
+                    keywords.some(
+                      (kw) => kw.toLowerCase() === part.toLowerCase(),
+                    ) ? (
+                      <span key={i} className="text-iris font-bold">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  );
+                };
+
+                return (
+                  <div key={feature.id} className="flex gap-4 items-start">
+                    <span className="font-lovelo1 text-iris shrink-0 text-lg">
+                      {feature.id}.
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-lovelo1 text-lg leading-tight">
+                        {highlightText(feature.title)}
+                      </h3>
+                      <p className="text-sm text-gray-400 max-w-xs">
+                        {highlightText(feature.desc)}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -203,26 +231,32 @@ export default function Qdocs() {
         </div>
       </div>
       {/* Why Qdocs / Use Case Section */}
+
       <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
         <h2 className="text-3xl font-lovelo1 text-center">
           Why Qdocs Stands Out
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
           {[
             {
-              title: "Contextual Understanding",
-              desc: "Interprets structure, tone, and hierarchy.",
-              metric: "Human‑like",
+              title: "Sovereign Infrastructure",
+              desc: "Unlike cloud-based readers, QDocs is deployed on your organization's secure hardware. Your confidential documents never transit the public internet or reside on third-party servers.",
+              metric: "Total Hardware Residency. ",
             },
             {
-              title: "Cross‑Format Intelligence",
-              desc: "Reads PDFs, images, and OCR text seamlessly.",
-              metric: "3+ Inputs",
+              title: "Group-Based Access Control",
+              desc: "QDocs utilizes robust Group-Based Access Control. Administrators can define precise permissions, ensuring that sensitive folders - like Legal or HR - are only queryable by authorized personnel.",
+              metric: "Need-to-Know Enforcement. ",
             },
             {
-              title: "Audit‑Ready Insights",
-              desc: "Every query is logged for full traceability.",
-              metric: "100% Traceable",
+              title: "Cross-Format Intelligence",
+              desc: "We process PDFs, images, and OCR text with structural precision. Users can manually edit and update AI-extracted content, with full versioning to track every modification.",
+              metric: "Human-in-the-Loop Extraction.",
+            },
+            {
+              title: "Immutable Audit Logs",
+              desc: "Built for accountability. Every document accessed and every query made is logged in a tamper-evident audit trail, giving the CISO full visibility into how internal data is being utilized. ",
+              metric: "100% Query Traceability.",
             },
           ].map((item, idx) => (
             <div
@@ -237,8 +271,8 @@ export default function Qdocs() {
             </div>
           ))}
         </div>
-        <button className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
-          Book a Demo
+        <button onClick={() => navigate.push(`./#contact`)} className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
+          Apply for pilot
         </button>
       </div>
       {/* Screenshots Section */}

@@ -26,7 +26,6 @@ export default function Home() {
         <Faq />
         <Contact />
         <About />
-        <Footer />
         <Link href={"#home"} className="fixed bottom-10 right-10">
           <FaArrowUp />
         </Link>

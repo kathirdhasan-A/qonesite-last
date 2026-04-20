@@ -4,13 +4,14 @@ import { IoMdRefresh } from "react-icons/io";
 import YouTube, { YouTubeProps, YouTubePlayer } from "react-youtube";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
+import { useRouter } from "next/router";
 
 const images = [
-  "./qdocs-man.png",
-  "./qdocs-home.png",
-  "./qdocs-man.png",
-  "./og-home.png",
-  "./og-feat.png",
+  "./qcode/home.png",
+  "./qcode/code.png",
+  "./qcode/files.png",
+  "./qcode/ai.png",
+
 ];
 
 const myCustomFont = localFont({
@@ -26,6 +27,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
+    const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -93,13 +95,16 @@ export default function Qdocs() {
       className={`back w-full flex flex-col overflow-hidden items-center gap-12 md:gap-20 px-4 md:px-8 ${myCustomFont.variable} font-sans`}
     >
       {/* Head section */}
-      <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Turn Document Chaos into Actionable Insights
+      <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-5xl">
+        <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+          Secure Your Technical Edge: Generate Code Without Informing the
+          Competition.
         </h1>
-        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-2xl">
-          The AI document reader that answers your questions and summarizes
-          complex texts.
+        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-3xl">
+          Stop paying AI providers to learn how your software is built. QCode
+          brings advanced code generation directly to your private hardware,
+          allowing you to build proprietary IP at lightning speed without
+          sharing a single line of your blueprint with the outside world.
         </p>
       </div>
       {/* Feature section */}
@@ -109,27 +114,30 @@ export default function Qdocs() {
         </p>
         <div className="w-full text-center">
           <p className="text-2xl md:text-3xl font-medium max-w-3xl mx-auto mb-4">
-            Turn hours of reading into minutes of understanding.
+            Breaking the Cycle of Paying to Leak Your Secrets
           </p>
-          <p className="max-w-2xl text-sm md:text-base text-gray-500 mx-auto">
-            Using OCR, this AI reads documents just like a human, interpreting
-            context, headings, and tables. Chat with PDFs to find answers
-            instantly.
+          <p className="max-w-3xl text-sm md:text-base text-gray-500 mx-auto">
+            Every time a developer uses a cloud-based AI to write code, they are
+            handing over the <strong className="text-iris">how</strong> and <strong className="text-iris">what</strong> of your company's core assets to
+            an external provider. QCode smashes this dependency. We provide a
+            specialized coding engine that lives entirely within your network.
+            You get all the speed of automated coding without the hidden cost of
+            training someone else's model with your unique logic.
           </p>
         </div>
 
         <div className="flex w-full justify-center items-center my-10 md:my-20">
           <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-12 lg:gap-16">
-            <div className="relative w-full max-w-md aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
+            <div className="relative w-full max-w-xl aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
               <img
-                src="./qdocs-home.png"
+                src="./qcode/home.png"
                 alt="Qdocs demo"
-                className="absolute top-[20%] left-[0%] w-[75%] h-auto rounded-lg border border-white/30 shadow-xl"
+                className="absolute top-[20%] left-[0%] w-[90%] h-auto rounded-lg border border-white/30 shadow-xl"
               />
               <img
-                src="./qdocs-man.png"
+                src="./qcode/files.png"
                 alt="Qdocs user"
-                className="z-10 absolute bottom-[25%] right-[5%] w-[55%] h-auto rounded-lg border border-white/30 shadow-2xl"
+                className="z-10 absolute bottom-[15%] right-[0%] w-[70%] h-auto rounded-lg border border-white/30 shadow-2xl"
               />
             </div>
 
@@ -137,39 +145,60 @@ export default function Qdocs() {
               {[
                 {
                   id: "01",
-                  title: "Intelligent PDF Analyzer",
-                  desc: "Analyze data, compare files, and extract insights.",
+                  title: "Total Intellectual Property Insulation",
+                  desc: "Stop the invisible leak. By keeping your code generation local, you ensure that your proprietary algorithms and architectural secrets are never used to train external AI models.",
                 },
                 {
                   id: "02",
-                  title: "Chat with Your Documents",
-                  desc: "Stop skimming pages and start conversing with your files.",
+                  title: "Zero-Egress Intelligence",
+                  desc: "Break the Cloud Tax. Instead of paying monthly fees to send your code to a third party, you run your own intelligence on your own hardware, keeping your secrets within your secure perimeter.",
                 },
                 {
                   id: "03",
-                  title: "Smart Summarization",
-                  desc: "Condense lengthy documents into concise summaries.",
+                  title: "Eliminate Blueprint Exposure",
+                  desc: "Don't let outsiders see how your system is built. QCode allows you to draft sensitive functions and core modules in a closed-loop environment that no external provider can access.",
                 },
                 {
                   id: "04",
-                  title: "Context-Aware Search",
-                  desc: "Find exactly what you need with semantic search.",
+                  title: "Sovereign Development Speed",
+                  desc: "Maintain 100% control over your assets. From the first prompt to the final code block, you own the entire process, ensuring your technical edge remains exclusive to your organization.",
                 },
-              ].map((feature) => (
-                <div key={feature.id} className="flex gap-4 items-start">
-                  <span className="font-lovelo1 text-iris shrink-0 text-lg">
-                    {feature.id}.
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="font-lovelo1 text-lg leading-tight">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 max-w-xs">
-                      {feature.desc}
-                    </p>
+              ].map((feature) => {
+                const highlightText = (text: string) => {
+                  const keywords = ["Cloud Tax", "Blueprint Exposure"];
+
+                  const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+                  const parts = text.split(regex);
+
+                  return parts.map((part, i) =>
+                    keywords.some(
+                      (kw) => kw.toLowerCase() === part.toLowerCase(),
+                    ) ? (
+                      <span key={i} className="text-iris font-bold">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  );
+                };
+
+                return (
+                  <div key={feature.id} className="flex gap-4 items-start">
+                    <span className="font-lovelo1 text-iris shrink-0 text-lg">
+                      {feature.id}.
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-lovelo1 text-lg leading-tight">
+                        {highlightText(feature.title)}
+                      </h3>
+                      <p className="text-sm text-gray-400 max-w-xs">
+                        {highlightText(feature.desc)}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -207,22 +236,27 @@ export default function Qdocs() {
         <h2 className="text-3xl font-lovelo1 text-center">
           Why Qdocs Stands Out
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
           {[
             {
-              title: "Contextual Understanding",
-              desc: "Interprets structure, tone, and hierarchy.",
-              metric: "Human‑like",
+              title: "Closed-Loop Engineering",
+              desc: "QCode is built for teams who refuse to share their roadmap. It operates in total isolation, ensuring your unique logic and internal libraries stay on your hardware and off the public internet.",
+              metric: "Breaking the Public Data Feed.",
             },
             {
-              title: "Cross‑Format Intelligence",
-              desc: "Reads PDFs, images, and OCR text seamlessly.",
-              metric: "3+ Inputs",
+              title: "Proprietary Logic Shield",
+              desc: "Your codebase is your most valuable asset. QCode ensures that your internal patterns and optimizations are never harvested to improve third-party AI, keeping your competitive advantages strictly in-house.",
+              metric: "No External Training. ",
             },
             {
-              title: "Audit‑Ready Insights",
-              desc: "Every query is logged for full traceability.",
-              metric: "100% Traceable",
+              title: "High-Fidelity Code Output",
+              desc: "QCode masters the hierarchy of modern software development. It generates clean, structured code across multiple languages, tailored specifically to your organization’s requirements and style.",
+              metric: "Structural Precision. ",
+            },
+            {
+              title: "Audit-Ready Security",
+              desc: "Built for accountability. Every AI-generated code block is logged within your internal network, giving you full visibility into how the tool is being used without ever exposing your files to an external provider.",
+              metric: "100% Internal Traceability",
             },
           ].map((item, idx) => (
             <div
@@ -237,8 +271,8 @@ export default function Qdocs() {
             </div>
           ))}
         </div>
-        <button className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
-          Book a Demo
+        <button onClick={() => navigate.push(`./#contact`)} className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
+          Apply for pilot
         </button>
       </div>
       {/* Screenshots Section */}
@@ -281,3 +315,4 @@ export default function Qdocs() {
     </div>
   );
 }
+

@@ -4,13 +4,14 @@ import { IoMdRefresh } from "react-icons/io";
 import YouTube, { YouTubeProps, YouTubePlayer } from "react-youtube";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
+import { useRouter } from "next/router";
 
 const images = [
-  "./qdocs-man.png",
-  "./qdocs-home.png",
-  "./qdocs-man.png",
-  "./og-home.png",
-  "./og-feat.png",
+  "./qurioz/qurioz-man.png",
+  "./qurioz/qurioz-chat.png",
+  "./qurioz/qurioz-db.png",
+  "./qurioz/qurioz-home.png",
+  "./qurioz/qurioz-vis.png",
 ];
 
 const myCustomFont = localFont({
@@ -26,6 +27,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
+  const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -93,13 +95,16 @@ export default function Qdocs() {
       className={`back w-full flex flex-col overflow-hidden items-center gap-12 md:gap-20 px-4 md:px-8 ${myCustomFont.variable} font-sans`}
     >
       {/* Head section */}
-      <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Turn Document Chaos into Actionable Insights
+      <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-5xl">
+        <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
+          Command Your Data with Private AI - Zero Cloud, Zero Leak, Total
+          Speed.
         </h1>
-        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-2xl">
-          The AI document reader that answers your questions and summarizes
-          complex texts.
+        <p className="text-gray-400 mt-4 text-lg md:text-xl max-w-4xl">
+          Qurioz deploys advanced analytical intelligence directly onto your
+          secure hardware, allowing you to generate SQL and 15+ visualization
+          types at lightning speed without ever exposing a single byte of
+          confidential info to the outside world.
         </p>
       </div>
       {/* Feature section */}
@@ -109,27 +114,31 @@ export default function Qdocs() {
         </p>
         <div className="w-full text-center">
           <p className="text-2xl md:text-3xl font-medium max-w-3xl mx-auto mb-4">
-            Turn hours of reading into minutes of understanding.
+            Breaking the Dependency on External AI Clouds
           </p>
-          <p className="max-w-2xl text-sm md:text-base text-gray-500 mx-auto">
-            Using OCR, this AI reads documents just like a human, interpreting
-            context, headings, and tables. Chat with PDFs to find answers
-            instantly.
+          <p className="max-w-4xl text-sm md:text-base text-gray-500 mx-auto">
+            Most AI tools require you to send your proprietary data to their
+            servers for analysis, creating a massive security hole. Qurioz
+            breaks this cycle. By operating entirely within your secure local
+            environment, it allows you to interrogate your databases and build
+            15+ types of visualizations without a single byte of confidential
+            information leaving your firewall. You get the speed of AI with the
+            absolute privacy of an on-premise solution.
           </p>
         </div>
 
         <div className="flex w-full justify-center items-center my-10 md:my-20">
           <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-12 lg:gap-16">
-            <div className="relative w-full max-w-md aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
+            <div className="relative w-full max-w-xl aspect-square lg:w-1/2 bg-radial from-[#5D3FD3]/20 via-transparent to-transparent flex justify-center items-center">
               <img
-                src="./qdocs-home.png"
+                src="./qurioz/qurioz-home.png"
                 alt="Qdocs demo"
-                className="absolute top-[20%] left-[0%] w-[75%] h-auto rounded-lg border border-white/30 shadow-xl"
+                className="absolute top-[20%] left-[0%] w-[90%] h-auto rounded-lg border border-white/30 shadow-xl"
               />
               <img
-                src="./qdocs-man.png"
+                src="./qurioz/qurioz-man.png"
                 alt="Qdocs user"
-                className="z-10 absolute bottom-[25%] right-[5%] w-[55%] h-auto rounded-lg border border-white/30 shadow-2xl"
+                className="z-10 absolute bottom-[15%] right-[0%] w-[70%] h-auto rounded-lg border border-white/30 shadow-2xl"
               />
             </div>
 
@@ -137,43 +146,63 @@ export default function Qdocs() {
               {[
                 {
                   id: "01",
-                  title: "Intelligent PDF Analyzer",
-                  desc: "Analyze data, compare files, and extract insights.",
+                  title: "Total Data Isolation",
+                  desc: " Keep your secrets secret. Qurioz is a closed-loop system, meaning your database schemas and query results never touch the public internet or external AI training sets.",
                 },
                 {
                   id: "02",
                   title: "Chat with Your Documents",
-                  desc: "Stop skimming pages and start conversing with your files.",
+                  desc: "Stay in control. Qurioz writes the SQL for you, but keeps the code visible and editable. You can validate the logic before it runs, ensuring you are always in the driver's seat.",
                 },
                 {
                   id: "03",
-                  title: "Smart Summarization",
-                  desc: "Condense lengthy documents into concise summaries.",
+                  title: "Instant Insight Synthesis",
+                  desc: " Don't just look at rows. Qurioz summarizes complex data sets into plain language and identifies the best visual format to tell your story.",
                 },
                 {
                   id: "04",
-                  title: "Context-Aware Search",
-                  desc: "Find exactly what you need with semantic search.",
+                  title: "Hardware-Level Privacy",
+                  desc: "Because the software lives on your company’s own hardware, you maintain physical and digital custody of your institutional knowledge 24/7.",
                 },
-              ].map((feature) => (
-                <div key={feature.id} className="flex gap-4 items-start">
-                  <span className="font-lovelo1 text-iris shrink-0 text-lg">
-                    {feature.id}.
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="font-lovelo1 text-lg leading-tight">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 max-w-xs">
-                      {feature.desc}
-                    </p>
+              ].map((feature) => {
+                const highlightText = (text: string) => {
+                  const keywords = ["closed-loop"];
+                  const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+                  const parts = text.split(regex);
+                  return parts.map((part, i) =>
+                    keywords.some(
+                      (kw) => kw.toLowerCase() === part.toLowerCase(),
+                    ) ? (
+                      <span key={i} className="text-iris font-bold">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  );
+                };
+
+                return (
+                  <div key={feature.id} className="flex gap-4 items-start">
+                    <span className="font-lovelo1 text-iris shrink-0 text-lg">
+                      {feature.id}.
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-lovelo1 text-lg leading-tight">
+                        {highlightText(feature.title)}
+                      </h3>
+                      <p className="text-sm text-gray-400 max-w-xs">
+                        {highlightText(feature.desc)}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
       </div>
+
       {/* Video Section */}
       <div className="w-full flex flex-col items-center gap-6 my-10 max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-lovelo1">
@@ -207,38 +236,68 @@ export default function Qdocs() {
         <h2 className="text-3xl font-lovelo1 text-center">
           Why Qdocs Stands Out
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
           {[
             {
-              title: "Contextual Understanding",
-              desc: "Interprets structure, tone, and hierarchy.",
-              metric: "Human‑like",
+              title: "Zero-Egress Architecture",
+              desc: "We’ve eliminated the risk of data bleeding. Qurioz does not talk to external AI providers; it processes your information locally on your secure servers, satisfying the strictest privacy standards.",
+              metric: "Data Stays In-House. ",
             },
             {
-              title: "Cross‑Format Intelligence",
-              desc: "Reads PDFs, images, and OCR text seamlessly.",
-              metric: "3+ Inputs",
+              title: "Auditable SQL Generation",
+              desc: "Qurioz bridges the gap between AI assistance and technical accuracy. It generates the SQL code for you to review, giving you the power of automation with the safety of manual verification.",
+              metric: "Verify Before You Execute.",
             },
             {
-              title: "Audit‑Ready Insights",
-              desc: "Every query is logged for full traceability.",
-              metric: "100% Traceable",
+              title: "High-Impact Visualizations",
+              desc: "Move from a question to a professional visual in seconds. From trend lines to heatmaps, Qurioz renders interactive charts directly in your chat window for immediate analysis.",
+              metric: "15+ Built-in Chart Types.",
             },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-2xl bg-iris/10 border border-iris/20 flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="font-lovelo1 text-xl">{item.title}</h3>
-              <p className="text-gray-500 text-sm grow">{item.desc}</p>
-              <p className="text-iris font-bold text-sm uppercase tracking-widest mt-2">
-                {item.metric}
-              </p>
-            </div>
-          ))}
+            {
+              title: "Group-Level Security",
+              desc: "Administrators can set group-based permissions to ensure sensitive databases remain restricted to authorized users only.",
+              metric: "Ease of use doesn't mean a lack of control. ",
+            },
+          ].map((item, idx) => {
+            const highlightText = (text: string) => {
+              const keywords = ["data bleeding"];
+
+              const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+              const parts = text.split(regex);
+
+              return parts.map((part, i) =>
+                keywords.some(
+                  (kw) => kw.toLowerCase() === part.toLowerCase(),
+                ) ? (
+                  <span key={i} className="text-iris font-bold">
+                    {part}
+                  </span>
+                ) : (
+                  part
+                ),
+              );
+            };
+            return (
+              <div
+                key={idx}
+                className="p-8 rounded-2xl bg-iris/10 border border-iris/20 flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-all duration-300"
+              >
+                <h3 className="font-lovelo1 text-xl">{item.title}</h3>
+                <p className="text-gray-500 text-sm grow">
+                  {highlightText(item.desc)}
+                </p>
+                <p className="text-iris font-bold text-sm uppercase tracking-widest mt-2">
+                  {item.metric}
+                </p>
+              </div>
+            );
+          })}
         </div>
-        <button className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
-          Book a Demo
+        <button
+          onClick={() => navigate.push(`./#contact`)}
+          className="md:px-10 px-7 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg"
+        >
+          Apply for pilot
         </button>
       </div>
       {/* Screenshots Section */}
@@ -265,7 +324,7 @@ export default function Qdocs() {
                 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute w-48 sm:w-64 md:w-80 lg:w-150 h-auto pointer-events-none select-none object-cover rounded-xl border-2 border-gray-200 shadow-lg"
+                className="absolute w-64 sm:w-64 md:w-80 lg:w-150 h-auto pointer-events-none select-none object-cover rounded-xl border-2 border-gray-200 shadow-lg"
               />
             ))}
           </AnimatePresence>
