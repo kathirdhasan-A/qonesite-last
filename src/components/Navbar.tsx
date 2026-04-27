@@ -51,6 +51,7 @@ export default function Navbar() {
         whileInView="visible"
         variants={navVariants}
         viewport={{ once: true, amount: 0.2 }}
+        onMouseLeave={() => setNavDrop("")}
         className="flex w-full h-15 pt-5 px-2 lg:pt-15 items-center justify-between lg:justify-around"
       >
         <div className="flex items-center gap-0.5 lg:gap-1">
@@ -66,7 +67,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className=" lg:w-[55%] xl:w-[45%] hidden lg:flex justify-between text-base xl:text-lg transition text-[#A0A0A0]">
+        <div className=" lg:w-[55%] xl:w-[45%] hidden lg:flex justify-between text-base xl:text-lg transition text-white/80">
           {[
             { label: "Solutions", href: "#solutions", dropdown: false },
             { label: "Features", href: "#features", dropdown: false },
@@ -86,20 +87,20 @@ export default function Navbar() {
             { label: "About Us", href: "#about", dropdown: false },
           ].map((item, i) =>
             item.dropdown ? (
-              <div className="relative " onClick={() => setNavDrop(item.label)}>
+              <div className="relative " onClick={() => setNavDrop(item.label)} onMouseEnter={() => setNavDrop(item.label)}>
                 <div className="flex group justify-center items-center gap-1 cursor-pointer">
                   <p className="group-hover:text-[#5D3FD3] transition duration-300 ease-in-out">
                     {item.label}
                   </p>
                   <IoIosArrowDown
                     onMouseEnter={() => setNavDrop(item.label)}
-                    onMouseLeave={() => setNavDrop("")}
+                    
                     className="group-hover:rotate-180 transition-transform duration-300 ease-in-out group-hover:text-[#5D3FD3]"
                   />
                 </div>
                 {navDrop === item.label && (
                   <div
-                    onMouseLeave={() => setNavDrop("")}
+                    onMouseEnter={() => setNavDrop(item.label)}
                     className="absolute  -translate-x-1/2 top-full mt-1 w-48 flex flex-col
                    bg-[#181032] border border-[#A0A0A0]/50 rounded-lg
                    animate-in fade-in zoom-in-95 duration-200 z-50"
@@ -110,7 +111,7 @@ export default function Navbar() {
                       <div
                         key={idx}
                         onClick={() => navigate.push(`/${opt.toLowerCase()}`)}
-                        className="px-4 py-2 hover:bg-iris/20 rounded-lg text-white/60 hover:text-white/80 
+                        className="px-4 py-2 hover:bg-iris/20 rounded-lg text-white/80 hover:text-white/80 
                        transition-colors cursor-pointer text-base"
                       >
                         {opt}
@@ -167,7 +168,7 @@ export default function Navbar() {
         initial={{ x: "100%" }}
         animate={menuOpen ? { x: 0 } : { x: "100%" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="fixed top-0 right-0 w-[75%] h-full bg-[#181032] text-[#A0A0A0] shadow-lg z-50 lg:hidden flex flex-col overflow-y-auto"
+        className="fixed top-0 right-0 w-[75%] h-full bg-[#181032] text-white/80 shadow-lg z-50 lg:hidden flex flex-col overflow-y-auto"
       >
         <div className="flex justify-between items-center p-6 border-b border-white/10">
           <h2 className="text-white font-bold text-xl">Menu</h2>
