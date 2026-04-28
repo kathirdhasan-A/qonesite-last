@@ -231,6 +231,71 @@ export default function Qdocs() {
           </div>
         </div>
       </div>
+      {/* Use case Section  */}
+      <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
+        <h2 className="text-3xl font-lovelo1 text-center">Use Case</h2>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-12 py-14 bg-linear-to-br from-iris/10  to-iris/5 rounded-3xl">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+              {[
+                {
+                  head: "Finance & Banking",
+                  sub_head: "For Risk & Compliance Officers",
+                  useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
+                  scenario:
+                    'A compliance team queries millions of transaction records using natural language to detect "structuring" patterns or suspicious velocity spikes. Qurioz generates instant trend charts for regulatory reporting while keeping sensitive financial data entirely within the bank’s private network.',
+                },
+                {
+                  head: "Pharmaceuticals & Life Sciences",
+                  sub_head: "For Clinical Research Directors",
+                  useCase: "Private Clinical Trial Insight Synthesis",
+                  scenario:
+                    'Researchers ask, "Which patient cohort in the Phase III trial showed adverse reactions to Compound X?" and receive a visual correlation chart while maintaining strict data privacy and GDPR compliance.',
+                },
+                {
+                  head: "Sales & Market Intelligence",
+                  sub_head: "For Regional Sales Managers",
+                  useCase: "Instant Multi-Region Performance Tracking",
+                  scenario:
+                    'A manager asks, "Which product had the highest sales growth in Dubai last month?" and instantly sees insights without relying on delayed reports or exposing data externally.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative w-full max-w-sm h-full rounded-2xl border border-iris/40 
+  bg-iris p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-white/5" />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div className="space-y-3">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                        {item.head}
+                      </span>
+
+                      <p className="text-xs text-white/60">{item.sub_head}</p>
+
+                      <h3 className="text-lg sm:text-xl font-semibold text-white leading-snug">
+                        {item.useCase}
+                      </h3>
+                    </div>
+
+
+                    <div className="my-5 h-px bg-white/10" />
+
+
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      {item.scenario}
+                    </p>
+                    <div className="mt-6 h-0.5 w-0 bg-white/70 transition-all duration-300 group-hover:w-full rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Qdocs / Use Case Section */}
       <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
         <h2 className="text-3xl font-lovelo1 text-center">

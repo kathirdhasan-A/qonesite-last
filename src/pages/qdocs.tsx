@@ -27,7 +27,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
-    const navigate = useRouter();
+  const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -117,11 +117,12 @@ export default function Qdocs() {
           </p>
           <p className="max-w-4xl text-sm md:text-base text-gray-500 mx-auto">
             For the modern enterprise, the risk isn't just the data- it’s the
-            destination. QDocs eliminates the <strong className="text-iris">Cloud Leak</strong> variable by operating
-            entirely within your controlled environment. We provide leadership
-            teams with the velocity of AI-driven insights while maintaining the
-            absolute privacy of a local solution. Your documents stay on your
-            hardware, under your rules.
+            destination. QDocs eliminates the{" "}
+            <strong className="text-iris">Cloud Leak</strong> variable by
+            operating entirely within your controlled environment. We provide
+            leadership teams with the velocity of AI-driven insights while
+            maintaining the absolute privacy of a local solution. Your documents
+            stay on your hardware, under your rules.
           </p>
         </div>
 
@@ -230,6 +231,70 @@ export default function Qdocs() {
           </div>
         </div>
       </div>
+
+      {/* Use case Section  */}
+      <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
+        <h2 className="text-3xl font-lovelo1 text-center">Use Case</h2>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-12 py-14 bg-linear-to-br from-iris/10  to-iris/5 rounded-3xl">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+              {[
+                {
+                  head: "Legal & Compliance",
+                  sub_head: "For Risk & Compliance Officers",
+                  useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
+                  scenario:
+                    'A compliance team queries millions of transaction records using natural language to detect "structuring" patterns or suspicious velocity spikes. Qurioz generates instant trend charts for regulatory reporting while keeping sensitive financial data entirely within the bank’s private network.',
+                },
+                {
+                  head: "Internal R&D & Research",
+                  sub_head: "For R&D Directors & Product Leads",
+                  useCase: "Private Intellectual Property (IP) Synthesis",
+                  scenario:
+                    ' Researchers query 20 years of internal technical whitepapers and failed experiment logs to solve a current engineering bottleneck. Instead of starting from scratch, they ask, "What were the specific failure points in our 2018 liquid-cooling prototype?" QDocs retrieves the exact technical findings, preventing the "reinvention of the wheel" while keeping proprietary trade secrets off the public internet.',
+                },
+                {
+                  head: "Corporate Intelligence & Artifacts",
+                  sub_head: "For Operations & Strategy Managers",
+                  useCase: "Secure Institutional Memory Search",
+                  scenario:
+                    'A manager preparing for a subsidiary expansion asks, "Summarize the board\'s decision-making logic from the 2022 internationalization meeting." QDocs searches through archived internal memos, meeting transcripts, and board decks to provide a concise summary. This preserves "institutional memory" and ensures strategic consistency without the risk of data mining by third-party AI providers.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative w-full max-w-sm h-full rounded-2xl border border-iris/40 
+  bg-iris p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-white/5" />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div className="space-y-3">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                        {item.head}
+                      </span>
+
+                      <p className="text-xs text-white/60">{item.sub_head}</p>
+
+                      <h3 className="text-lg sm:text-xl font-semibold text-white leading-snug">
+                        {item.useCase}
+                      </h3>
+                    </div>
+
+                    <div className="my-5 h-px bg-white/10" />
+
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      {item.scenario}
+                    </p>
+                    <div className="mt-6 h-0.5 w-0 bg-white/70 transition-all duration-300 group-hover:w-full rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Qdocs / Use Case Section */}
 
       <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
@@ -271,7 +336,10 @@ export default function Qdocs() {
             </div>
           ))}
         </div>
-        <button onClick={() => navigate.push(`./#contact`)} className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
+        <button
+          onClick={() => navigate.push(`./#contact`)}
+          className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg"
+        >
           Apply for pilot
         </button>
       </div>

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { MdPhoneInTalk } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
-import { label } from "framer-motion/client";
 import { useRouter } from "next/navigation";
 
 const navVariants: Variants = {
@@ -21,9 +20,10 @@ export default function Navbar() {
   const navigate = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [navDrop, setNavDrop] = useState("");
-  const logo = "QONE";
-  const [mobileDrop, setMobileDrop] = useState(""); 
+  const [mobileDrop, setMobileDrop] = useState("");
+  const [timeoutId, setTimeoutId] = useState<any>(null); 
 
+  const logo = "QONE";
 
   const navLinks = [
     { label: "Solutions", href: "#solutions", dropdown: false },
@@ -43,6 +43,19 @@ export default function Navbar() {
     },
     { label: "About Us", href: "#about", dropdown: false },
   ];
+
+  const handleMouseEnter = (label: string) => {
+    if (timeoutId) clearTimeout(timeoutId);
+    setNavDrop(label);
+  };
+
+  const handleMouseLeave = () => {
+    const id = setTimeout(() => {
+      setNavDrop("");
+    }, 200);
+    setTimeoutId(id);
+  };
+
   return (
     <div>
       {/* Navbar */}
@@ -51,7 +64,6 @@ export default function Navbar() {
         whileInView="visible"
         variants={navVariants}
         viewport={{ once: true, amount: 0.2 }}
-        onMouseLeave={() => setNavDrop("")}
         className="flex w-full h-15 pt-5 px-2 lg:pt-15 items-center justify-between lg:justify-around"
       >
         <div className="flex items-center gap-0.5 lg:gap-1">
@@ -59,7 +71,7 @@ export default function Navbar() {
             return (
               <h1
                 key={index}
-                className="text-md lg:text-2xl font-extrabold font-lovelo1 bg-white border border-white text-iris rounded w-6 h-6 lg:w-8 lg:h-8  flex justify-center items-center pt-0.5 lg:pt-1 m-0"
+                className="text-md lg:text-2xl font-extrabold font-lovelo1 bg-white border border-white text-iris rounded w-6 h-6 lg:w-8 lg:h-8 flex justify-center items-center pt-0.5 lg:pt-1 m-0"
               >
                 {char}
               </h1>
@@ -67,63 +79,52 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className=" lg:w-[55%] xl:w-[45%] hidden lg:flex justify-between text-base xl:text-lg transition text-white/80">
-          {[
-            { label: "Solutions", href: "#solutions", dropdown: false },
-            { label: "Features", href: "#features", dropdown: false },
-            {
-              label: "Products",
-              href: "#",
-              dropdown: true,
-              options: ["Qurioz", "Qdocs", "Qtalk", "Qcode"],
-            },
-            { label: "Pricing", href: "#pricing", dropdown: false },
-            { label: "FAQs", href: "#faqs", dropdown: false },
-            {
-              label: "Blogs",
-              href: "https://quantrail-data.com/blog/",
-              dropdown: false,
-            },
-            { label: "About Us", href: "#about", dropdown: false },
-          ].map((item, i) =>
+        <div className="lg:w-[55%] xl:w-[45%] hidden lg:flex justify-between text-base xl:text-lg transition text-white font-medium">
+          {navLinks.map((item, i) =>
             item.dropdown ? (
-              <div className="relative " onClick={() => setNavDrop(item.label)} onMouseEnter={() => setNavDrop(item.label)}>
+              <div
+                key={i}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="flex group justify-center items-center gap-1 cursor-pointer">
                   <p className="group-hover:text-[#5D3FD3] transition duration-300 ease-in-out">
                     {item.label}
                   </p>
-                  <IoIosArrowDown
-                    onMouseEnter={() => setNavDrop(item.label)}
-                    
-                    className="group-hover:rotate-180 transition-transform duration-300 ease-in-out group-hover:text-[#5D3FD3]"
-                  />
+                  <IoIosArrowDown className="group-hover:rotate-180 transition-transform duration-300 ease-in-out group-hover:text-[#5D3FD3]" />
                 </div>
-                {navDrop === item.label && (
-                  <div
-                    onMouseEnter={() => setNavDrop(item.label)}
-                    className="absolute  -translate-x-1/2 top-full mt-1 w-48 flex flex-col
-                   bg-[#181032] border border-[#A0A0A0]/50 rounded-lg
-                   animate-in fade-in zoom-in-95 duration-200 z-50"
-                  >
-                    <div className="" />
 
-                    {item.options?.map((opt, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => navigate.push(`/${opt.toLowerCase()}`)}
-                        className="px-4 py-2 hover:bg-iris/20 rounded-lg text-white/80 hover:text-white/80 
-                       transition-colors cursor-pointer text-base"
-                      >
-                        {opt}
-                      </div>
-                    ))}
+                {navDrop === item.label && (
+                  <div className="absolute -translate-x-1/2 top-full mt-1 w-42 flex flex-col">
+                    
+
+                    <div className="absolute -top-2 h-3 w-full " />
+
+                    <div
+                      onMouseEnter={() => handleMouseEnter(item.label)}
+                      onMouseLeave={handleMouseLeave}
+                      className="bg-[#181032] border border-[#A0A0A0]/50 p-2 rounded-lg
+                      animate-in fade-in zoom-in-95 duration-200 z-50"
+                    >
+                      {item.options?.map((opt, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() => navigate.push(`/${opt.toLowerCase()}`)}
+                          className="px-4 py-2 hover:bg-iris/20 rounded-lg text-white font-medium hover:text-white/80 
+                          transition-colors cursor-pointer text-base"
+                        >
+                          {opt}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
+
             ) : (
               <div
                 key={i}
-                // href={'#'}
                 onClick={() => {
                   if (item.label === "Blogs") {
                     navigate.push(`${item.href}`);
@@ -135,16 +136,16 @@ export default function Navbar() {
               >
                 {item.label}
               </div>
-            ),
+            )
           )}
         </div>
 
         <div className="flex items-center gap-5">
           <Link href={"#contact"}>
-            <button className="px-3 py-1.5 bg-[#5D3FD3] border border-transparent lg:scale-[0.96] lg:hover:scale-[0.99]  group lg:px-6 lg:py-3 rounded-full cursor-pointer items-center justify-center gap-2 flex font-semibold hover:bg-iris/20 hover:border-iris">
+            <button className="px-3 py-1.5 bg-[#5D3FD3] border border-transparent lg:scale-[0.96] lg:hover:scale-[0.99] group lg:px-6 lg:py-3 rounded-full cursor-pointer items-center justify-center gap-2 flex font-semibold hover:bg-iris/20 hover:border-iris">
               <span className="flex gap-1 ">
-                <MdPhone className=" md:text-xl group-hover:hidden transition-all" />
-                <MdPhoneInTalk className=" md:text-xl hidden group-hover:block transition-all duration-300" />
+                <MdPhone className="md:text-xl group-hover:hidden transition-all" />
+                <MdPhoneInTalk className="md:text-xl hidden group-hover:block transition-all duration-300" />
               </span>
               <span className="hidden lg:block">Contact us</span>
               <span className="lg:hidden text-sm">Contact</span>

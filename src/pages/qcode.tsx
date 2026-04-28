@@ -11,7 +11,6 @@ const images = [
   "./qcode/code.png",
   "./qcode/files.png",
   "./qcode/ai.png",
-
 ];
 
 const myCustomFont = localFont({
@@ -27,7 +26,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
-    const navigate = useRouter();
+  const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -118,11 +117,12 @@ export default function Qdocs() {
           </p>
           <p className="max-w-3xl text-sm md:text-base text-gray-500 mx-auto">
             Every time a developer uses a cloud-based AI to write code, they are
-            handing over the <strong className="text-iris">how</strong> and <strong className="text-iris">what</strong> of your company's core assets to
-            an external provider. QCode smashes this dependency. We provide a
-            specialized coding engine that lives entirely within your network.
-            You get all the speed of automated coding without the hidden cost of
-            training someone else's model with your unique logic.
+            handing over the <strong className="text-iris">how</strong> and{" "}
+            <strong className="text-iris">what</strong> of your company's core
+            assets to an external provider. QCode smashes this dependency. We
+            provide a specialized coding engine that lives entirely within your
+            network. You get all the speed of automated coding without the
+            hidden cost of training someone else's model with your unique logic.
           </p>
         </div>
 
@@ -231,6 +231,70 @@ export default function Qdocs() {
           </div>
         </div>
       </div>
+
+      {/* Use case Section  */}
+      <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
+        <h2 className="text-3xl font-lovelo1 text-center">Use Case</h2>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-12 py-14 bg-linear-to-br from-iris/10  to-iris/5 rounded-3xl">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+              {[
+                {
+                  head: "Specification-Driven Generation",
+                  sub_head: "For Software Architects",
+                  useCase: "High-Precision Code Scaffolding",
+                  scenario:
+                    ' A developer provides a detailed technical specification and a set of design constraints. QCode generates a functional code structure based on those specific instructions. This allows the architect to move from a conceptual design to a working skeleton in minutes, ensuring the foundation is built exactly to their requirements while keeping the logic strictly on-premise.',
+                },
+                {
+                  head: "Iterative Logic Refinement",
+                  sub_head: "For Senior Developers",
+                  useCase: "Multi-Stage Code Refactoring",
+                  scenario:
+                    ' A developer provides a block of code and a specific goal, such as "optimize for better error handling" or "simplify this nested logic." QCode proposes a refined version. The developer then provides feedback or additional constraints, and QCode updates the code accordingly. This creates a tight, private feedback loop that speeds up the polishing of complex modules.',
+                },
+                {
+                  head: "Unit Test & Edge Case Drafting",
+                  sub_head: "For QA and Backend Engineers",
+                  useCase: "Rapid Test Suite Construction",
+                  scenario:
+                    ' A developer provides a completed function or class and asks QCode to draft a corresponding suite of unit tests, including potential edge cases. QCode analyzes the logic provided in the prompt and generates the test code. The developer reviews the draft to ensure full coverage, significantly reducing the manual labor involved in maintaining high-quality, reliable software.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative w-full max-w-sm h-full rounded-2xl border border-iris/40 
+  bg-iris p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-white/5" />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div className="space-y-3">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                        {item.head}
+                      </span>
+
+                      <p className="text-xs text-white/60">{item.sub_head}</p>
+
+                      <h3 className="text-lg sm:text-xl font-semibold text-white leading-snug">
+                        {item.useCase}
+                      </h3>
+                    </div>
+
+                    <div className="my-5 h-px bg-white/10" />
+
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      {item.scenario}
+                    </p>
+                    <div className="mt-6 h-0.5 w-0 bg-white/70 transition-all duration-300 group-hover:w-full rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Qdocs / Use Case Section */}
       <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
         <h2 className="text-3xl font-lovelo1 text-center">
@@ -271,7 +335,10 @@ export default function Qdocs() {
             </div>
           ))}
         </div>
-        <button onClick={() => navigate.push(`./#contact`)} className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
+        <button
+          onClick={() => navigate.push(`./#contact`)}
+          className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg"
+        >
           Apply for pilot
         </button>
       </div>
@@ -315,4 +382,3 @@ export default function Qdocs() {
     </div>
   );
 }
-

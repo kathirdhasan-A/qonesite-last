@@ -26,7 +26,7 @@ const myCustomFont = localFont({
 });
 
 export default function Qdocs() {
-    const navigate = useRouter();
+  const navigate = useRouter();
   const [ended, setEnded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -209,6 +209,70 @@ export default function Qdocs() {
           </div>
         </div>
       </div>
+
+      {/* Use case Section  */}
+      <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
+        <h2 className="text-3xl font-lovelo1 text-center">Use Case</h2>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-12 py-14 bg-linear-to-br from-iris/10  to-iris/5 rounded-3xl">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+              {[
+                {
+                  head: "Corporate Strategy & Innovation",
+                  sub_head: "For Senior Executive Leadership",
+                  useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
+                  scenario:
+                    'A director discusses a sensitive European expansion plan or a "What-If" merger scenario. Unlike public AI, QChat provides high-level reasoning while keeping every conversation log strictly on the company’s own servers, ensuring that top-secret corporate strategies never leave the internal network.',
+                },
+                {
+                  head: "Internal Legal & Compliance",
+                  sub_head: "For Legal Counsel & HR Leads",
+                  useCase: "Confidential Policy & Contract Advisory",
+                  scenario:
+                    'An employee asks QChat to clarify complex internal labor policies or draft a sensitive contract amendment. The interaction remains private and audit-ready within the company\'s firewall, providing a secure alternative to ChatGPT that prevents proprietary internal rules and PII from being leaked to external training sets.',
+                },
+                {
+                  head: "Technical Research & Development",
+                  sub_head: "For Engineering & R&D Leads",
+                  useCase: "Secure Technical Knowledge Partner",
+                  scenario:
+                    'A developer uses QChat to brainstorm system architectures or debug complex code logic. Because the assistant runs entirely on-premise, the company’s core intellectual property and proprietary technical designs are never uploaded to a cloud, allowing for high-speed technical problem-solving with total data privacy.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative w-full max-w-sm h-full rounded-2xl border border-iris/40 
+  bg-iris p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-white/5" />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div className="space-y-3">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                        {item.head}
+                      </span>
+
+                      <p className="text-xs text-white/60">{item.sub_head}</p>
+
+                      <h3 className="text-lg sm:text-xl font-semibold text-white leading-snug">
+                        {item.useCase}
+                      </h3>
+                    </div>
+
+                    <div className="my-5 h-px bg-white/10" />
+
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      {item.scenario}
+                    </p>
+                    <div className="mt-6 h-0.5 w-0 bg-white/70 transition-all duration-300 group-hover:w-full rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Qdocs / Use Case Section */}
       <div className="w-full flex flex-col items-center gap-10 my-10 max-w-6xl">
         <h2 className="text-3xl font-lovelo1 text-center">
@@ -264,7 +328,10 @@ export default function Qdocs() {
             );
           })}
         </div>
-       <button onClick={() => navigate.push(`./#contact`)} className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg">
+        <button
+          onClick={() => navigate.push(`./#contact`)}
+          className="px-10 py-4 bg-iris text-white rounded-full font-bold hover:bg-iris/90 transition-colors shadow-lg"
+        >
           Apply for pilot
         </button>
       </div>
