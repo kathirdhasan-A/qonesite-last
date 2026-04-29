@@ -99,7 +99,7 @@ export default function Qdocs() {
         <div className="mb-4 flex items-center justify-center space-x-3">
           <div className="h-px w-8 bg-gray-300"></div>
           <p className="text-xl font-bold tracking-[0.2em] font-lovelo1 text-gray-400 uppercase">
-            QUrios
+            Qurioz
           </p>
           <div className="h-px w-8 bg-gray-300"></div>
         </div>
@@ -287,9 +287,7 @@ export default function Qdocs() {
                       </h3>
                     </div>
 
-
                     <div className="my-5 h-px bg-white/10" />
-
 
                     <p className="text-sm text-white/70 leading-relaxed">
                       {item.scenario}

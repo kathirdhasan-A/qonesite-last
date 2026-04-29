@@ -32,7 +32,7 @@ export default function Navbar() {
       label: "Products",
       href: "#",
       dropdown: true,
-      options: ["QUrioz", "QDocs", "QTalk", "QCode"],
+      options: ["Qurioz", "QDocs", "QTalk", "QCode"],
     },
     { label: "Pricing", href: "#pricing", dropdown: false },
     { label: "FAQs", href: "#faqs", dropdown: false },
