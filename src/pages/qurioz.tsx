@@ -250,21 +250,21 @@ export default function Qdocs() {
                   sub_head: "For Risk & Compliance Officers",
                   useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
                   scenario:
-                    'A compliance team queries millions of transaction records using natural language to detect "structuring" patterns or suspicious velocity spikes. Qurioz generates instant trend charts for regulatory reporting while keeping sensitive financial data entirely within the bank’s private network.',
+                    'A compliance team queries millions of transaction records using natural language to detect "structuring" patterns or suspicious velocity spikes. Qurioz generates instant trend charts for regulatory reporting while keeping sensitive financial data entirely within the bank’s private network ensuring zero exposure to external AI providers.',
                 },
                 {
                   head: "Pharmaceuticals & Life Sciences",
                   sub_head: "For Clinical Research Directors",
                   useCase: "Private Clinical Trial Insight Synthesis",
                   scenario:
-                    'Researchers ask, "Which patient cohort in the Phase III trial showed adverse reactions to Compound X?" and receive a visual correlation chart while maintaining strict data privacy and GDPR compliance.',
+                    ' Researchers ask, "Which patient cohort in the Phase III trial showed adverse reactions to Compound X?" and receive a visual correlation chart. Proprietary drug formulas and patient PII are protected via on-premise residency, allowing for deep data interrogation without violating GDPR or compromising patent-sensitive R&D.',
                 },
                 {
                   head: "Sales & Market Intelligence",
                   sub_head: "For Regional Sales Managers",
                   useCase: "Instant Multi-Region Performance Tracking",
                   scenario:
-                    'A manager asks, "Which product had the highest sales growth in Dubai last month?" and instantly sees insights without relying on delayed reports or exposing data externally.',
+                    ' A manager asks, "Which product had the highest sales growth in Dubai last month?" Qurioz instantly pulls the numbers from the local database and displays a bar chart. This allows the manager to see exactly what is selling without needing to wait for a manual report or sending sensitive sales data to a cloud-based AI.',
                 },
               ].map((item, index) => (
                 <div

@@ -228,7 +228,7 @@ export default function Qdocs() {
                 {
                   head: "Corporate Strategy & Innovation",
                   sub_head: "For Senior Executive Leadership",
-                  useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
+                  useCase: " Sovereign Strategic Brainstorming",
                   scenario:
                     'A director discusses a sensitive European expansion plan or a "What-If" merger scenario. Unlike public AI, QChat provides high-level reasoning while keeping every conversation log strictly on the company’s own servers, ensuring that top-secret corporate strategies never leave the internal network.',
                 },

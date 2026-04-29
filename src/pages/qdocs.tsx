@@ -249,10 +249,10 @@ export default function Qdocs() {
               {[
                 {
                   head: "Legal & Compliance",
-                  sub_head: "For Risk & Compliance Officers",
-                  useCase: "Sovereign Anti-Money Laundering (AML) Forensics",
+                  sub_head: "For General Counsel & Compliance Officers",
+                  useCase: "Sovereign Regulatory & Contract Audit",
                   scenario:
-                    'A compliance team queries millions of transaction records using natural language to detect "structuring" patterns or suspicious velocity spikes. Qurioz generates instant trend charts for regulatory reporting while keeping sensitive financial data entirely within the bank’s private network.',
+                    ' A legal team drops 10,000+ pages of complex contracts and new EU AI Act or GCC labor regulations into QDocs. They ask, "Which of our current vendor agreements violate the new Article 14 data residency requirements?" QDocs identifies the specific clauses instantly with document-level citations, ensuring the audit happens entirely on-premise without exposing sensitive legal strategies.',
                 },
                 {
                   head: "Internal R&D & Research",
