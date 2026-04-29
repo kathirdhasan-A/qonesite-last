@@ -95,6 +95,14 @@ export default function Qdocs() {
     >
       {/* Head section */}
       <div className="flex flex-col justify-center items-center mt-12 md:mt-20 text-center max-w-4xl">
+        <div className="mb-4 flex items-center justify-center space-x-3">
+          <div className="h-px w-8 bg-gray-300"></div>
+          <p className="text-xl font-bold tracking-[0.2em] font-lovelo1 text-gray-400 uppercase">
+            QTalk
+          </p>
+          <div className="h-px w-8 bg-gray-300"></div>
+        </div>
+
         <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
           Your Private GPT: Executive-Level AI Without the Public Cloud Risk.
         </h1>
@@ -114,7 +122,7 @@ export default function Qdocs() {
           <p className="text-2xl md:text-3xl font-medium max-w-3xl mx-auto mb-4">
             Shattering the Privacy Trade-off in Generative AI
           </p>
-          <p className="max-w-3xl text-sm md:text-base text-gray-500 mx-auto">
+          <p className="max-w-3xl text-sm md:text-base text-gray-400 mx-auto">
             Until now, using generative AI meant sacrificing data sovereignty to
             external providers. QTalk smashes that barrier. We provide a
             professional-grade chat interface that looks and feels like the
@@ -320,7 +328,7 @@ export default function Qdocs() {
                 className="p-8 rounded-2xl bg-iris/10 border border-iris/20 flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-all duration-300"
               >
                 <h3 className="font-lovelo1 text-xl">{item.title}</h3>
-                <p className="text-gray-500 text-sm grow">{item.desc}</p>
+                <p className="text-gray-400 text-sm grow">{item.desc}</p>
                 <p className="text-iris font-bold text-sm uppercase tracking-widest mt-2">
                   {highlightText(item.metric)}
                 </p>
